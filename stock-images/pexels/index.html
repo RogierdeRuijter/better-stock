@@ -266,8 +266,9 @@
     }
 
     @media (min-width: 0) and (max-width: 650px) {
-      .BreakpointGrid_grid-mobile__1fjBJ {
+      .BreakpointGrid_grid-desktop__M_BZw {
         display: flex;
+        flex-direction: column;
       }
     }
 
@@ -549,7 +550,6 @@
 
     .Grid_gridWrapper__FBUdI {
       position: relative;
-      width: 100%;
     }
 
     .Grid_mockRow__SPM65 {
@@ -3576,10 +3576,8 @@
 
     const amountPerRow = 3;
 
-    // TODO: create more items .BreakpointGrid_item__RSMyf
-    // if they are needed
     const originalElement = document
-      .querySelector(".BreakpointGrid_item__RSMyf")
+      .querySelector(".BreakpointGrid_item__RSMyf");
     const baseElement = originalElement.cloneNode(true);
     const exisitingElements = document
       .querySelectorAll(".BreakpointGrid_item__RSMyf");
