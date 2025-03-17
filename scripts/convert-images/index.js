@@ -7,7 +7,7 @@ export const convert = () => {
   const originalsFolderPath = path.join(baseFolderPath, "originals");
   const convertedFolderPath = path.join(baseFolderPath, "processed");
   const outputFolderPath = path.join(baseFolderPath, "transformed");
-  const sizes = [2400];
+  const sizes = [600, 1400, 2400];
 
   console.log(path.basename(process.cwd()));
 
@@ -52,7 +52,6 @@ export const convert = () => {
 
       sizes.forEach((size) => {
         // Convert image to JPEG
-        /*
         sharp(inputFilePath)
           .resize({ width: size })
           .jpeg()
@@ -69,7 +68,6 @@ export const convert = () => {
               }
             },
           );
-        */
 
         // Convert image to AVIF
         sharp(inputFilePath)

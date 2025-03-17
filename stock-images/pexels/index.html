@@ -3364,15 +3364,17 @@
               <div data-testid="column" class="BreakpointGrid_column__9MIoh">
                 <div class="BreakpointGrid_item__RSMyf" data-testid="item">
                   <article class="MediaCard_card__6_MG7" style="
-                        aspect-ratio: 2434 / 3291;
-                        background: rgb(27, 27, 27);
                       ">
                     <a data-testid="next-link" class="MediaCard_content__kA4yf Link_link__Ime8c spacing_noMargin__F5u9R"
-                      href="/photo/moody-black-and-white-alleyway-portrait-30550762/"><img lazy="load"
-                        src="/assets/originals/IMG_2943.jpg"
-                        sizes="(max-width: 650px) calc((100vw - 42px) / 2), (max-width: 900px) calc((100vw - 52px) / 2), (max-width: 1440px) calc((100vw - 108px) / 3), (max-width: 1600px) calc((100vw - 108px) / 3), calc((1600px - 108px) / 3)"
-                        alt="Free A solitary figure stands in a dramatic black and white alleyway scene, evoking a sense of mystery. Stock Photo"
-                        class="spacing_noMargin__F5u9R" />
+                      href="/photo/moody-black-and-white-alleyway-portrait-30550762/">
+                      <picture>
+                        <source srcset="" type="image/avif">
+                        <source srcset="" type="image/jpeg">
+                        <img lazy="load" src="/assets/originals/IMG_2943.jpg"
+                          sizes="(max-width: 650px) calc((100vw - 42px) / 2), 33vw"
+                          alt="Free A solitary figure stands in a dramatic black and white alleyway scene, evoking a sense of mystery. Stock Photo"
+                          class="spacing_noMargin__F5u9R" />
+                      </picture>
                       <div class="MediaCard_overlay__HNJfd"></div>
                     </a>
                     <div>
@@ -3432,147 +3434,337 @@
     const basePath = "/assets";
     const images = [
       {
-        path: `${basePath}/aftrekkendeman_2400px.avif`,
-        width: 2400,
-        height: 1519
+        name: `aftrekkendeman`,
+        src: `${basePath}/aftrekkendeman_1400px.avif`,
+        width: 1400,
+        height: 886,
+        srcSetAvif:
+          `${basePath}/aftrekkendeman_1400px.avif 1400w, ${basePath}/aftrekkendeman_2400px.avif 2400w, ${basePath}/aftrekkendeman_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/aftrekkendeman_1400px.jpg 1400w, ${basePath}/aftrekkendeman_2400px.jpg 2400w, ${basePath}/aftrekkendeman_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/auto-ogen-enlijnen_2400px.avif`,
-        width: 2400,
-        height: 1697
+        name: `auto-ogen-enlijnen`,
+        src: `${basePath}/auto-ogen-enlijnen_1400px.avif`,
+        width: 1400,
+        height: 990,
+        srcSetAvif:
+          `${basePath}/auto-ogen-enlijnen_1400px.avif 1400w, ${basePath}/auto-ogen-enlijnen_2400px.avif 2400w, ${basePath}/auto-ogen-enlijnen_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/auto-ogen-enlijnen_1400px.jpg 1400w, ${basePath}/auto-ogen-enlijnen_2400px.jpg 2400w, ${basePath}/auto-ogen-enlijnen_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/auto-ogen_2400px.avif`,
-        width: 2400,
-        height: 1697
+        name: `auto-ogen`,
+        src: `${basePath}/auto-ogen_1400px.avif`,
+        width: 1400,
+        height: 990,
+        srcSetAvif:
+          `${basePath}/auto-ogen_1400px.avif 1400w, ${basePath}/auto-ogen_2400px.avif 2400w, ${basePath}/auto-ogen_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/auto-ogen_1400px.jpg 1400w, ${basePath}/auto-ogen_2400px.jpg 2400w, ${basePath}/auto-ogen_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/badkamer_2400px.avif`,
-        width: 2400,
-        height: 3429
-      },
-      {path: `${basePath}/boos_2400px.avif`, width: 2400, height: 3395},
-      {path: `${basePath}/cheers_2400px.avif`, width: 2400, height: 3394},
-      {
-        path: `${basePath}/drankjesdoen_2400px.avif`,
-        width: 2400,
-        height: 2419
+        name: `badkamer`,
+        src: `${basePath}/badkamer_1400px.avif`,
+        width: 1400,
+        height: 2001,
+        srcSetAvif:
+          `${basePath}/badkamer_1400px.avif 1400w, ${basePath}/badkamer_2400px.avif 2400w, ${basePath}/badkamer_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/badkamer_1400px.jpg 1400w, ${basePath}/badkamer_2400px.jpg 2400w, ${basePath}/badkamer_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/engbos-fiets_2400px.avif`,
-        width: 2400,
-        height: 3308
+        name: `boos`,
+        src: `${basePath}/boos_1400px.avif`,
+        width: 1400,
+        height: 1980,
+        srcSetAvif:
+          `${basePath}/boos_1400px.avif 1400w, ${basePath}/boos_2400px.avif 2400w, ${basePath}/boos_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/boos_1400px.jpg 1400w, ${basePath}/boos_2400px.jpg 2400w, ${basePath}/boos_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/geest-van-de-harrasor_2400px.avif`,
-        width: 2400,
-        height: 1680
+        name: `cheers`,
+        src: `${basePath}/cheers_1400px.avif`,
+        width: 1400,
+        height: 1980,
+        srcSetAvif:
+          `${basePath}/cheers_1400px.avif 1400w, ${basePath}/cheers_2400px.avif 2400w, ${basePath}/cheers_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/cheers_1400px.jpg 1400w, ${basePath}/cheers_2400px.jpg 2400w, ${basePath}/cheers_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/handen-enthuis_2400px.avif`,
-        width: 2400,
-        height: 2377
+        name: `drankjesdoen`,
+        src: `${basePath}/drankjesdoen_1400px.avif`,
+        width: 1400,
+        height: 1411,
+        srcSetAvif:
+          `${basePath}/drankjesdoen_1400px.avif 1400w, ${basePath}/drankjesdoen_2400px.avif 2400w, ${basePath}/drankjesdoen_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/drankjesdoen_1400px.jpg 1400w, ${basePath}/drankjesdoen_2400px.jpg 2400w, ${basePath}/drankjesdoen_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/handen-huilen_2400px.avif`,
-        width: 2400,
-        height: 3390
+        name: `engbos-fiets`,
+        src: `${basePath}/engbos-fiets_1400px.avif`,
+        width: 1400,
+        height: 1930,
+        srcSetAvif:
+          `${basePath}/engbos-fiets_1400px.avif 1400w, ${basePath}/engbos-fiets_2400px.avif 2400w, ${basePath}/engbos-fiets_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/engbos-fiets_1400px.jpg 1400w, ${basePath}/engbos-fiets_2400px.jpg 2400w, ${basePath}/engbos-fiets_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/handenoplichaam_2400px.avif`,
-        width: 2400,
-        height: 3346
+        name: `geest-van-de-harrasor`,
+        src: `${basePath}/geest-van-de-harrasor_1400px.avif`,
+        width: 1400,
+        height: 980,
+        srcSetAvif:
+          `${basePath}/geest-van-de-harrasor_1400px.avif 1400w, ${basePath}/geest-van-de-harrasor_2400px.avif 2400w, ${basePath}/geest-van-de-harrasor_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/geest-van-de-harrasor_1400px.jpg 1400w, ${basePath}/geest-van-de-harrasor_2400px.jpg 2400w, ${basePath}/geest-van-de-harrasor_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/hoofd4bij5_2400px.avif`,
-        width: 2400,
-        height: 3000
+        name: `handen-enthuis`,
+        src: `${basePath}/handen-enthuis_1400px.avif`,
+        width: 1400,
+        height: 1387,
+        srcSetAvif:
+          `${basePath}/handen-enthuis_1400px.avif 1400w, ${basePath}/handen-enthuis_2400px.avif 2400w, ${basePath}/handen-enthuis_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/handen-enthuis_1400px.jpg 1400w, ${basePath}/handen-enthuis_2400px.jpg 2400w, ${basePath}/handen-enthuis_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/img-2942_2400px.avif`,
-        width: 2400,
-        height: 1800
+        name: `handen-huilen`,
+        src: `${basePath}/handen-huilen_1400px.avif`,
+        width: 1400,
+        height: 1977,
+        srcSetAvif:
+          `${basePath}/handen-huilen_1400px.avif 1400w, ${basePath}/handen-huilen_2400px.avif 2400w, ${basePath}/handen-huilen_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/handen-huilen_1400px.jpg 1400w, ${basePath}/handen-huilen_2400px.jpg 2400w, ${basePath}/handen-huilen_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/img-2943_2400px.avif`,
-        width: 2400,
-        height: 3245
+        name: `handenoplichaam`,
+        src: `${basePath}/handenoplichaam_1400px.avif`,
+        width: 1400,
+        height: 1952,
+        srcSetAvif:
+          `${basePath}/handenoplichaam_1400px.avif 1400w, ${basePath}/handenoplichaam_2400px.avif 2400w, ${basePath}/handenoplichaam_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/handenoplichaam_1400px.jpg 1400w, ${basePath}/handenoplichaam_2400px.jpg 2400w, ${basePath}/handenoplichaam_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/indetram_2400px.avif`,
-        width: 2400,
-        height: 2378
+        name: `hoofd4bij5`,
+        src: `${basePath}/hoofd4bij5_1400px.avif`,
+        width: 1400,
+        height: 1750,
+        srcSetAvif:
+          `${basePath}/hoofd4bij5_1400px.avif 1400w, ${basePath}/hoofd4bij5_2400px.avif 2400w, ${basePath}/hoofd4bij5_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/hoofd4bij5_1400px.jpg 1400w, ${basePath}/hoofd4bij5_2400px.jpg 2400w, ${basePath}/hoofd4bij5_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/ingebroken2_2400px.avif`,
-        width: 2400,
-        height: 1709
+        name: `img-2942`,
+        src: `${basePath}/img-2942_1400px.avif`,
+        width: 1400,
+        height: 1050,
+        srcSetAvif:
+          `${basePath}/img-2942_1400px.avif 1400w, ${basePath}/img-2942_2400px.avif 2400w, ${basePath}/img-2942_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/img-2942_1400px.jpg 1400w, ${basePath}/img-2942_2400px.jpg 2400w, ${basePath}/img-2942_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/ingebroken_2400px.avif`,
-        width: 2400,
-        height: 1899
-      },
-      {path: `${basePath}/kruis1_2400px.avif`, width: 2400, height: 1519},
-      {
-        path: `${basePath}/man-auto-lijnen_2400px.avif`,
-        width: 2400,
-        height: 1691
-      },
-      {path: `${basePath}/man_2400px.avif`, width: 2400, height: 3909},
-      {
-        path: `${basePath}/manogen_2400px.avif`,
-        width: 2400,
-        height: 1503
+        name: `img-2943`,
+        src: `${basePath}/img-2943_1400px.avif`,
+        width: 1400,
+        height: 1893,
+        srcSetAvif:
+          `${basePath}/img-2943_1400px.avif 1400w, ${basePath}/img-2943_2400px.avif 2400w, ${basePath}/img-2943_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/img-2943_1400px.jpg 1400w, ${basePath}/img-2943_2400px.jpg 2400w, ${basePath}/img-2943_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/ogenman_2400px.avif`,
-        width: 2400,
-        height: 3921
+        name: `indetram`,
+        src: `${basePath}/indetram_1400px.avif`,
+        width: 1400,
+        height: 1387,
+        srcSetAvif:
+          `${basePath}/indetram_1400px.avif 1400w, ${basePath}/indetram_2400px.avif 2400w, ${basePath}/indetram_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/indetram_1400px.jpg 1400w, ${basePath}/indetram_2400px.jpg 2400w, ${basePath}/indetram_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/onemore_2400px.avif`,
-        width: 2400,
-        height: 3400
-      },
-      {path: `${basePath}/rits_2400px.avif`, width: 2400, height: 3850},
-      {
-        path: `${basePath}/rodeman_2400px.avif`,
-        width: 2400,
-        height: 1762
-      },
-      {path: `${basePath}/tekst_2400px.avif`, width: 2400, height: 3394},
-      {
-        path: `${basePath}/untitled-artwork-94_2400px.avif`,
-        width: 2400,
-        height: 2669
+        name: `ingebroken2`,
+        src: `${basePath}/ingebroken2_1400px.avif`,
+        width: 1400,
+        height: 997,
+        srcSetAvif:
+          `${basePath}/ingebroken2_1400px.avif 1400w, ${basePath}/ingebroken2_2400px.avif 2400w, ${basePath}/ingebroken2_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/ingebroken2_1400px.jpg 1400w, ${basePath}/ingebroken2_2400px.jpg 2400w, ${basePath}/ingebroken2_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/vieze-man_2400px.avif`,
-        width: 2400,
-        height: 1711
+        name: `ingebroken`,
+        src: `${basePath}/ingebroken_1400px.avif`,
+        width: 1400,
+        height: 1108,
+        srcSetAvif:
+          `${basePath}/ingebroken_1400px.avif 1400w, ${basePath}/ingebroken_2400px.avif 2400w, ${basePath}/ingebroken_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/ingebroken_1400px.jpg 1400w, ${basePath}/ingebroken_2400px.jpg 2400w, ${basePath}/ingebroken_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/viezevrouw_2400px.avif`,
-        width: 2400,
-        height: 3001
+        name: `kruis1`,
+        src: `${basePath}/kruis1_1400px.avif`,
+        width: 1400,
+        height: 886,
+        srcSetAvif:
+          `${basePath}/kruis1_1400px.avif 1400w, ${basePath}/kruis1_2400px.avif 2400w, ${basePath}/kruis1_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/kruis1_1400px.jpg 1400w, ${basePath}/kruis1_2400px.jpg 2400w, ${basePath}/kruis1_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/vrouviezpsd_2400px.avif`,
-        width: 2400,
-        height: 3363
+        name: `man-auto-lijnen`,
+        src: `${basePath}/man-auto-lijnen_1400px.avif`,
+        width: 1400,
+        height: 986,
+        srcSetAvif:
+          `${basePath}/man-auto-lijnen_1400px.avif 1400w, ${basePath}/man-auto-lijnen_2400px.avif 2400w, ${basePath}/man-auto-lijnen_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/man-auto-lijnen_1400px.jpg 1400w, ${basePath}/man-auto-lijnen_2400px.jpg 2400w, ${basePath}/man-auto-lijnen_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/womendoorgaan_2400px.avif`,
-        width: 2400,
-        height: 3469
+        name: `man`,
+        src: `${basePath}/man_1400px.avif`,
+        width: 1400,
+        height: 2280,
+        srcSetAvif:
+          `${basePath}/man_1400px.avif 1400w, ${basePath}/man_2400px.avif 2400w, ${basePath}/man_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/man_1400px.jpg 1400w, ${basePath}/man_2400px.jpg 2400w, ${basePath}/man_600px.jpg 600w`,
       },
       {
-        path: `${basePath}/youlikethis_2400px.avif`,
-        width: 2400,
-        height: 3394
-      }
+        name: `manogen`,
+        src: `${basePath}/manogen_1400px.avif`,
+        width: 1400,
+        height: 877,
+        srcSetAvif:
+          `${basePath}/manogen_1400px.avif 1400w, ${basePath}/manogen_2400px.avif 2400w, ${basePath}/manogen_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/manogen_1400px.jpg 1400w, ${basePath}/manogen_2400px.jpg 2400w, ${basePath}/manogen_600px.jpg 600w`,
+      },
+      {
+        name: `ogenman`,
+        src: `${basePath}/ogenman_1400px.avif`,
+        width: 1400,
+        height: 2287,
+        srcSetAvif:
+          `${basePath}/ogenman_1400px.avif 1400w, ${basePath}/ogenman_2400px.avif 2400w, ${basePath}/ogenman_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/ogenman_1400px.jpg 1400w, ${basePath}/ogenman_2400px.jpg 2400w, ${basePath}/ogenman_600px.jpg 600w`,
+      },
+      {
+        name: `onemore`,
+        src: `${basePath}/onemore_1400px.avif`,
+        width: 1400,
+        height: 1984,
+        srcSetAvif:
+          `${basePath}/onemore_1400px.avif 1400w, ${basePath}/onemore_2400px.avif 2400w, ${basePath}/onemore_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/onemore_1400px.jpg 1400w, ${basePath}/onemore_2400px.jpg 2400w, ${basePath}/onemore_600px.jpg 600w`,
+      },
+      {
+        name: `rits`,
+        src: `${basePath}/rits_1400px.avif`,
+        width: 1400,
+        height: 2246,
+        srcSetAvif:
+          `${basePath}/rits_1400px.avif 1400w, ${basePath}/rits_2400px.avif 2400w, ${basePath}/rits_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/rits_1400px.jpg 1400w, ${basePath}/rits_2400px.jpg 2400w, ${basePath}/rits_600px.jpg 600w`,
+      },
+      {
+        name: `rodeman`,
+        src: `${basePath}/rodeman_1400px.avif`,
+        width: 1400,
+        height: 1028,
+        srcSetAvif:
+          `${basePath}/rodeman_1400px.avif 1400w, ${basePath}/rodeman_2400px.avif 2400w, ${basePath}/rodeman_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/rodeman_1400px.jpg 1400w, ${basePath}/rodeman_2400px.jpg 2400w, ${basePath}/rodeman_600px.jpg 600w`,
+      },
+      {
+        name: `tekst`,
+        src: `${basePath}/tekst_1400px.avif`,
+        width: 1400,
+        height: 1980,
+        srcSetAvif:
+          `${basePath}/tekst_1400px.avif 1400w, ${basePath}/tekst_2400px.avif 2400w, ${basePath}/tekst_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/tekst_1400px.jpg 1400w, ${basePath}/tekst_2400px.jpg 2400w, ${basePath}/tekst_600px.jpg 600w`,
+      },
+      {
+        name: `untitled-artwork-94`,
+        src: `${basePath}/untitled-artwork-94_1400px.avif`,
+        width: 1400,
+        height: 1557,
+        srcSetAvif:
+          `${basePath}/untitled-artwork-94_1400px.avif 1400w, ${basePath}/untitled-artwork-94_2400px.avif 2400w, ${basePath}/untitled-artwork-94_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/untitled-artwork-94_1400px.jpg 1400w, ${basePath}/untitled-artwork-94_2400px.jpg 2400w, ${basePath}/untitled-artwork-94_600px.jpg 600w`,
+      },
+      {
+        name: `vieze-man`,
+        src: `${basePath}/vieze-man_1400px.avif`,
+        width: 1400,
+        height: 998,
+        srcSetAvif:
+          `${basePath}/vieze-man_1400px.avif 1400w, ${basePath}/vieze-man_2400px.avif 2400w, ${basePath}/vieze-man_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/vieze-man_1400px.jpg 1400w, ${basePath}/vieze-man_2400px.jpg 2400w, ${basePath}/vieze-man_600px.jpg 600w`,
+      },
+      {
+        name: `viezevrouw`,
+        src: `${basePath}/viezevrouw_1400px.avif`,
+        width: 1400,
+        height: 1750,
+        srcSetAvif:
+          `${basePath}/viezevrouw_1400px.avif 1400w, ${basePath}/viezevrouw_2400px.avif 2400w, ${basePath}/viezevrouw_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/viezevrouw_1400px.jpg 1400w, ${basePath}/viezevrouw_2400px.jpg 2400w, ${basePath}/viezevrouw_600px.jpg 600w`,
+      },
+      {
+        name: `vrouviezpsd`,
+        src: `${basePath}/vrouviezpsd_1400px.avif`,
+        width: 1400,
+        height: 1962,
+        srcSetAvif:
+          `${basePath}/vrouviezpsd_1400px.avif 1400w, ${basePath}/vrouviezpsd_2400px.avif 2400w, ${basePath}/vrouviezpsd_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/vrouviezpsd_1400px.jpg 1400w, ${basePath}/vrouviezpsd_2400px.jpg 2400w, ${basePath}/vrouviezpsd_600px.jpg 600w`,
+      },
+      {
+        name: `womendoorgaan`,
+        src: `${basePath}/womendoorgaan_1400px.avif`,
+        width: 1400,
+        height: 2024,
+        srcSetAvif:
+          `${basePath}/womendoorgaan_1400px.avif 1400w, ${basePath}/womendoorgaan_2400px.avif 2400w, ${basePath}/womendoorgaan_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/womendoorgaan_1400px.jpg 1400w, ${basePath}/womendoorgaan_2400px.jpg 2400w, ${basePath}/womendoorgaan_600px.jpg 600w`,
+      },
+      {
+        name: `youlikethis`,
+        src: `${basePath}/youlikethis_1400px.avif`,
+        width: 1400,
+        height: 1980,
+        srcSetAvif:
+          `${basePath}/youlikethis_1400px.avif 1400w, ${basePath}/youlikethis_2400px.avif 2400w, ${basePath}/youlikethis_600px.avif 600w`,
+        srcSetJpg:
+          `${basePath}/youlikethis_1400px.jpg 1400w, ${basePath}/youlikethis_2400px.jpg 2400w, ${basePath}/youlikethis_600px.jpg 600w`,
+      },
     ];
+
 
     const amountPerRow = 3;
 
@@ -3615,10 +3807,15 @@
 
     items.forEach((item, index) => {
       const image = images[index];
+
       if (image) {
-        const img = item.querySelector("img");
-        img.src = image.path;
-        img.srcset = "";
+        const picture = item.querySelector("picture");
+        const sources = picture.querySelectorAll("source");
+        sources[0].srcset = image.srcSetAvif;
+        sources[1].srcset = image.srcSetJpg;
+
+        const img = picture.querySelector("img");
+        img.src = image.src;
 
         const article = item.querySelector("article");
         article.style = `aspect-ratio: ${image.width}/${image.height}`;

@@ -2,9 +2,8 @@ import fs from "node:fs";
 import path from "path";
 import sharp from "sharp";
 
-const directoryPath = "../stock-images/pexels/assets";
+const directoryPath = "./convert-images/assets/transformed";
 
-// TODO: How do we adhere to some order?
 fs.readdir(directoryPath, async (err, files) => {
   if (err) {
     console.error("Error reading directory:", err);
@@ -22,19 +21,57 @@ fs.readdir(directoryPath, async (err, files) => {
       const metadata = await sharp(filePath).metadata();
       const width = metadata.width ?? 1;
       const height = metadata.height ?? 1;
+      const format = metadata.format;
       const basePath = "${basePath}";
+      const name = file.split("_")[0];
 
-      items.push({
-        path: `${basePath}/${file}`,
-        width,
-        height,
+      const item = items.find((item) => item.name === name);
 
-      });
+      if (item) {
+        item.srcSetData.push({
+          src: `${basePath}/${file}`,
+          width,
+          height,
+          format, 
+        });
+      } else {
+        items.push({
+          name,
+          src: `${basePath}/${file}`,
+          width,
+          height,
+          srcSetData: [
+            {
+              src: `${basePath}/${file}`,
+              width,
+              height,
+              format
+            },
+          ],
+        });
+      }
     } catch (error) {
       console.error(`Error processing file ${file}:`, error.message);
     }
   }
 
-  console.log(items);
-});
+  for (const item of items) {
+    item.srcSetAvif = item.srcSetData
+      .filter((data) => data.format === "heif")
+      .map((data) => `${data.src} ${data.width}w`)
+      .join(", ");
 
+    item.srcSetJpg = item.srcSetData
+      .filter((data) => data.format === "jpeg")
+      .map((data) => `${data.src} ${data.width}w`)
+      .join(", ");
+  }
+
+  for (const item of items) {
+    delete item.srcSetData;
+  }
+
+  fs.writeFileSync("./dist/images.js", JSON.stringify(items, null, 2));
+
+  console.dir(items, { depth: null });
+});
