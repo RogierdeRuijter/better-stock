@@ -7,7 +7,7 @@ export const convert = () => {
   const originalsFolderPath = path.join(baseFolderPath, "originals");
   const convertedFolderPath = path.join(baseFolderPath, "processed");
   const outputFolderPath = path.join(baseFolderPath, "transformed");
-  const sizes = [1200];
+  const sizes = [2400];
 
   console.log(path.basename(process.cwd()));
 
