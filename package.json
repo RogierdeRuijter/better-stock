@@ -6,6 +6,8 @@
     "convert": "node index.js"
   },
   "dependencies": {
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
     "sharp": "^0.33.5"
   }
 }
