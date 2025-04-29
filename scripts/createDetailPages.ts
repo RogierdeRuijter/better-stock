@@ -29,11 +29,11 @@ fs.readdir(directoryPath, async (err, files) => {
       const widths = [600, 1400, 2400];
 
       const page = `---
-filename: ${name}
-width: ${width},
-height: ${height},
-widths: ${widths},
-layout: "../../layout/ImageLayout.astro"
+name: ${name}
+width: ${width}
+height: ${height}
+widths: [${widths}]
+layout: ../../layouts/DetailLayout.astro
 ---`;
       fs.writeFileSync(outputPath + name + ".md", page);
     } catch (error) {
