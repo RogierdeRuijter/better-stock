@@ -1,8 +1,15 @@
 ---
 import Layout from "./Layout.astro";
 import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
 ---
+
 <Layout>
   <Navigation />
-  <slot />
+  <header>
+    <Header />
+  </header>
+  <main>
+    <slot />
+  </main>
 </Layout>

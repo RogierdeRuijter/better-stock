@@ -2,39 +2,97 @@
 
 ---
 
-      <header class="HeroHeader_hero">
-        <div class="HeroHeader_content">
-          <h1
-            class="Text_text__D8yqX Text_size-h49__TD6VW Text_size-h39-mobile__D_FKh Text_color-whiteFFFFFF__LuhCQ spacing_noMargin__F5u9R"
-            style="
+<div class="HeroHeader_hero">
+  <div class="HeroHeader_content">
+    <h1
+      class="Text_text__D8yqX Text_size-h49__TD6VW Text_size-h39-mobile__D_FKh Text_color-whiteFFFFFF__LuhCQ spacing_noMargin__F5u9R"
+      style="
                 font-family: BigShoulders, Oswald, sans-serif;
                 line-height: 1.8;
               "
-          >
-            The best free stock images of sexual violence, because
-            <a
-              href="https://www.istockphoto.com/se/search/2/image-film?phrase=sexual%20violence"
-              >these</a
-            >
-            ones are reducing, harmful and wrong
-          </h1>
-          <form
-            role="search"
-            autocomplete="off"
-            class="SearchBar_form__SelOc spacing_noMargin__F5u9R spacing_mt30__MAo08"
-          >
-            <div class="SearchInput_container">
-              <button class="Button_button" type="button">Photos</button>
-              <input
-                class="SearchInput_input"
-                id="search"
-                autocapitalize="none"
-                data-testid="search-input"
-                placeholder="Search for free images"
-                type="search"
-                value="Sexual violence"
-              />
-            </div>
-          </form>
-        </div>
-      </header>
+    >
+      The best free stock images of sexual violence, because
+      <a
+        href="https://www.istockphoto.com/se/search/2/image-film?phrase=sexual%20violence"
+        >these</a
+      >
+      ones are reducing, harmful and wrong
+    </h1>
+    <form
+      role="search"
+      autocomplete="off"
+      class="SearchBar_form__SelOc spacing_noMargin__F5u9R spacing_mt30__MAo08"
+    >
+      <div class="SearchInput_container">
+        <button class="Button_button" type="button">Photos</button>
+        <input
+          class="SearchInput_input"
+          id="search"
+          autocapitalize="none"
+          data-testid="search-input"
+          placeholder="Search for free images"
+          type="search"
+          value="Sexual violence"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+<style>
+  .HeroHeader_hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(234, 236, 240);
+    background-color: var(--background-color-dark);
+    min-height: 35rem;
+  }
+
+  .HeroHeader_content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 630px;
+    padding: 0 1rem;
+  }
+
+  .SearchInput_container {
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 3fr;
+    background: var(--background-color-light);
+    border-color: var(--border-color-light);
+    padding: 0.4em;
+    font-weight: 500;
+  }
+
+  .Button_button {
+    padding: 12px 11px 12px 0;
+    border: 0;
+    background: none;
+    font-weight: inherit;
+    font-size: 1.1rem;
+  }
+
+  .Button_text {
+    padding-inline: 24px;
+  }
+
+  .SearchInput_input {
+    appearance: none;
+    border: none;
+    font-family: inherit !important;
+    font-size: inherit;
+    font-weight: inherit;
+    outline: none;
+    background: none;
+  }
+
+  h1 {
+    font-family: BigShoulders, Oswald, sans-serif;
+    line-height: 1.8;
+    letter-spacing: -0.02em;
+    font-size: 2.5rem;
+  }
+</style>

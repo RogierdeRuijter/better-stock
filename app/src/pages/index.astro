@@ -3,127 +3,117 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
 <SiteLayout>
-  <div>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      style="position: absolute; width: 0; height: 0"
-      aria-hidden="true"
-      id="__SVG_SPRITE_NODE__"></svg>
+  <div class="Controls">
+    <h3
+      class="Text_text__D8yqX Text_size-h23__75YF7 Text_color-midnight2C343E__iCo4Q spacing_noMargin__F5u9R"
+    >
+      Free stock images
+    </h3>
+    <button>Trending</button>
   </div>
-  <div id="main-content">
-    <div id="__next">
-      <main>
-        <div class="Controls">
-          <h3
-            class="Text_text__D8yqX Text_size-h23__75YF7 Text_color-midnight2C343E__iCo4Q spacing_noMargin__F5u9R"
-          >
-            Free stock images
-          </h3>
-          <button>Trending</button>
-        </div>
-        <div class="Grid_gridWrapper">
-          <div class="BreakpointGrid_column" data-testid="column">
-            <div class="BreakpointGrid_item" data-testid="item">
-              <article class="MediaCard_card">
-                <a class="MediaCard_content" data-testid="next-link">
-                  <picture>
-                    <source srcset="" type="image/avif" />
-                    <source srcset="" type="image/jpeg" />
-                    <img
-                      lazy="load"
-                      src="/assets/originals/IMG_2943.jpg"
-                      sizes="(max-width: 650px) calc((100vw - 42px) / 2), 33vw"
-                      alt="Free A solitary figure stands in a dramatic black and white alleyway scene, evoking a sense of mystery. Stock Photo"
-                    />
-                  </picture>
-                  <div class="MediaCard_overlay"></div>
-                </a>
-              </article>
-            </div>
-          </div>
-          <div class="BreakpointGrid_column" data-testid="column"></div>
-          <div class="BreakpointGrid_column" data-testid="column"></div>
-        </div>
-      </main>
+  <div class="Grid_gridWrapper">
+    <div class="BreakpointGrid_column" data-testid="column">
+      <div class="BreakpointGrid_item" data-testid="item">
+        <article class="MediaCard_card">
+          <a class="MediaCard_content" data-testid="next-link">
+            <picture>
+              <source srcset="" type="image/avif" />
+              <source srcset="" type="image/jpeg" />
+              <img
+                loading="lazy"
+                src="/assets/originals/IMG_2943.jpg"
+                sizes="(max-width: 650px) calc((100vw - 42px) / 2), 33vw"
+                alt="Free A solitary figure stands in a dramatic black and white alleyway scene, evoking a sense of mystery. Stock Photo"
+              />
+            </picture>
+            <div class="MediaCard_overlay"></div>
+          </a>
+        </article>
+      </div>
     </div>
-
-    <style>
-      main {
-        max-width: 1440px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      img {
-        width: 100%;
-        display: block;
-      }
-
-      .Grid_gridWrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 1.5rem;
-      }
-
-      .BreakpointGrid_column {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .MediaCard_overlay {
-        position: absolute;
-        pointer-events: none;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.1),
-          transparent 20%,
-          transparent 80%,
-          rgba(0, 0, 0, 0.3)
-        );
-        transition: opacity 0.1s linear;
-        inset: 0;
-        opacity: 0;
-      }
-
-      .MediaCard_card {
-        position: relative;
-      }
-
-      .MediaCard_card:hover .MediaCard_overlay {
-        opacity: 1;
-      }
-    </style>
-    <style>
-      .Controls {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 2rem 0;
-      }
-
-      button {
-        color: #191919;
-        background: #fff;
-        border: 1px solid;
-        border-color: #ededed;
-        height: 50px;
-        padding-inline: 1.25rem;
-        font-family: inherit;
-        font-size: 1rem;
-      }
-
-      button:hover {
-        background: #f7f7f7;
-        border-color: #747474;
-      }
-
-      h3 {
-        font-size: 1.5rem;
-      }
-    </style>
+    <div class="BreakpointGrid_column" data-testid="column"></div>
+    <div class="BreakpointGrid_column" data-testid="column"></div>
   </div>
+
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+
+    main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .Grid_gridWrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .BreakpointGrid_column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .MediaCard_overlay {
+      position: absolute;
+      pointer-events: none;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.1),
+        transparent 20%,
+        transparent 80%,
+        rgba(0, 0, 0, 0.3)
+      );
+      transition: opacity 0.1s linear;
+      inset: 0;
+      opacity: 0;
+    }
+
+    .MediaCard_card {
+      position: relative;
+    }
+
+    .MediaCard_card:hover .MediaCard_overlay {
+      opacity: 1;
+    }
+  </style>
+  <style>
+    .Controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2rem 0;
+    }
+
+    button {
+      color: #191919;
+      background: #fff;
+      border: 1px solid;
+      border-color: #ededed;
+      height: 50px;
+      padding-inline: 1.25rem;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background: #f7f7f7;
+      border-color: #747474;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+  </style>
   <script>
     const basePath = "/assets";
     const images = [
