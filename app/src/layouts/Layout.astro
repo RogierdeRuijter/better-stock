@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>Better stock</title>
   </head>
   <body>
     <slot />
@@ -27,6 +27,27 @@
     font-style: normal;
     font-weight: 100 900;
     src: url("/fonts/BigShoulders_36pt-Bold.ttf") format("truetype");
+  }
+
+  html {
+    --background-color-dark: rgb(16, 19, 24);
+    --background-color-light: #f7f7f7;
+
+    --border-color-light: #f5f5f5;
+
+    --text-color-light: rgb(234, 236, 260);
+
+    font-family:
+      Canva Sans,
+      Helvetica Neue,
+      Roboto,
+      -apple-system,
+      blinkmacsystemfont,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1rem;
+    line-height: 1.4;
   }
 </style>
 
