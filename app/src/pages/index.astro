@@ -27,6 +27,10 @@ import SiteLayout from "../layouts/SiteLayout.astro";
               />
             </picture>
             <div class="MediaCard_overlay"></div>
+
+            <a class="download" href="https://example.com/image.jpg" download="my-image.jpg">
+              Download Image
+            </a>
           </a>
         </article>
       </div>
@@ -36,10 +40,6 @@ import SiteLayout from "../layouts/SiteLayout.astro";
   </div>
 
   <style>
-    @view-transition {
-      navigation: auto;
-    }
-
     main {
       max-width: 1440px;
       margin: 0 auto;
@@ -418,6 +418,15 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
     items.forEach((item, index) => {
       const image = images[index];
+
+      const anchor = item.querySelector(".MediaCard_content");
+      if (anchor) {
+        anchor.href = `/details/${image.name}`;
+      }
+
+      const download = item.querySelector(".download");
+      download.href = image.src;
+      download.download = image.name;
 
       if (image) {
         const picture = item.querySelector("picture");

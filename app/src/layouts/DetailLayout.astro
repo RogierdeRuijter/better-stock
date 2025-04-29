@@ -1,10 +1,92 @@
 ---
+import type { GetImageResult } from "astro";
+import Layout from "./Layout.astro";
+import { getImage } from "astro:assets";
+import Navigation from "../components/Navigation.astro";
 
 const { frontmatter } = Astro.props;
 
+const { name, width, height, widths } = frontmatter;
+
+const basePath = "/assets";
+
+const imgName = name;
+
+const getImageResultJpg = await getImage({
+  src: `/assets/${name}`,
+  widths,
+  format: "jpg",
+  width,
+  height,
+});
+
+const getImageResultAvif = await getImage({
+  src: `/assets/${name}`,
+  widths,
+  format: "avif",
+  width,
+  height,
+});
+
+const generateSrcset = (getImageResult: GetImageResult): string => {
+  let srcset = "";
+  const values = getImageResult.srcSet.values;
+
+  values.forEach((value) => {
+    const { src, width, format } = value.transform;
+    const attribute = `${src}_${width}px.${format} ${value.descriptor}`;
+    srcset += attribute;
+
+    if (value !== values[values.length - 1]) {
+      srcset += ", ";
+    }
+  });
+
+  return srcset;
+};
+
+let imageWidth = "auto";
+let pageHeight = "auto";
+
+if (frontmatter.width > frontmatter.height) {
+  imageWidth = `calc(var(--max-photo-height) * ${frontmatter.width} / ${frontmatter.height})`;
+} else {
+  pageHeight = `calc(var(--container-width) * ${frontmatter.height} / ${frontmatter.width})`;
+}
 ---
 
-<div>
-  <h1>{frontmatter.title}</h1>
-  <p>{frontmatter.description}</p>
-</div>
+<Layout>
+  <Navigation />
+  <main>
+    <picture>
+      <source srcset={generateSrcset(getImageResultAvif)} type="image/avif" />
+      <source srcset={generateSrcset(getImageResultJpg)} type="image/jpg" />
+      <img
+        loading="lazy"
+        src={basePath + "/" + imgName + "_600px.jpg"}
+        sizes="100vw"
+        alt=""
+      />
+    </picture>
+  </main>
+</Layout>
+
+<style
+  define:vars={{
+    imageWidth,
+    pageHeight,
+  }}
+>
+  main {
+    --container-width: 96vw;
+    --max-photo-height: 70svh;
+
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    display: block;
+    height: var(--pageHeight);
+    width: var(--imageWidth);
+  }
+</style>
