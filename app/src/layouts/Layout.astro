@@ -1,22 +1,45 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  @font-face {
+    font-family: "Oswald";
+    font-style: normal;
+    font-weight: 100 900;
+    size-adjust: 150%;
+    line-gap-override: 200%;
+    src: url("/fonts/Oswald-SemiBold.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "BigShoulder";
+    font-style: normal;
+    font-weight: 100 900;
+    src: url("/fonts/BigShoulders_36pt-Bold.ttf") format("truetype");
+  }
+</style>
+
+{/* reset */}
+<style is:global>
+  h3 {
+    margin: 0;
+  }
+
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
