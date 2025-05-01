@@ -1,0 +1,19 @@
+[build]
+# The directory where your Astro project lives
+base = "app"
+
+# The command to build the Astro site
+command = "npm run build"
+
+# The directory where the built site is output by Astro
+publish = "app/dist"
+
+# Set the Node.js version if needed (optional)
+# [build.environment]
+# NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
