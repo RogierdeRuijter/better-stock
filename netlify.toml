@@ -6,7 +6,7 @@ base = "app"
 command = "npm run build"
 
 # The directory where the built site is output by Astro
-publish = "app/dist"
+publish = "/dist"
 
 # Set the Node.js version if needed (optional)
 # [build.environment]
