@@ -3,6 +3,7 @@ import type { GetImageResult } from "astro";
 import Layout from "./Layout.astro";
 import { getImage } from "astro:assets";
 import Navigation from "../components/Navigation.astro";
+import DownloadButton from "../components/DownloadButton.astro";
 
 const { frontmatter } = Astro.props;
 
@@ -58,6 +59,7 @@ if (frontmatter.width > frontmatter.height) {
 <Layout>
   <Navigation />
   <main>
+    <DownloadButton {name}>Free Download</DownloadButton>
     <picture>
       <source srcset={generateSrcset(getImageResultAvif)} type="image/avif" />
       <source srcset={generateSrcset(getImageResultJpg)} type="image/jpg" />

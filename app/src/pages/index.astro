@@ -1,5 +1,6 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+import DownloadButton from "../components/DownloadButton.astro";
 
 const basePath = "/assets";
 const images = [
@@ -294,9 +295,9 @@ const columns = distributeIntoThree(images);
   <div class="Grid_gridWrapper">
     {
       columns.map((images) => (
-        <div class="BreakpointGrid_column" data-testid="column">
-          <div class="BreakpointGrid_item" data-testid="item">
-            {images.map((image) => (
+        <div class="BreakpointGrid_column">
+          {images.map((image) => (
+            <div class="BreakpointGrid_item">
               <article class="MediaCard_card">
                 <a
                   href={`/details/${image.name}`}
@@ -314,13 +315,11 @@ const columns = distributeIntoThree(images);
                     />
                   </picture>
                   <div class="MediaCard_overlay" />
-                  <a class="download" href={image.src} download={image.name}>
-                    Download Image
-                  </a>
+                  <DownloadButton name={image.name}>Download</DownloadButton>
                 </a>
               </article>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       ))
     }
@@ -372,6 +371,14 @@ const columns = distributeIntoThree(images);
     .MediaCard_card:hover .MediaCard_overlay {
       opacity: 1;
     }
+
+    .MediaCard_download {
+      position: absolute;
+    }
+
+    .MediaCard_card:not(:hover) .MediaCard_download {
+      display: none;
+    }
   </style>
   <style>
     .Controls {
@@ -398,10 +405,6 @@ const columns = distributeIntoThree(images);
     }
 
     h3 {
-      font-size: 1.5rem;
-    }
-  </style>
-</SiteLayout>
       font-size: 1.5rem;
     }
   </style>
