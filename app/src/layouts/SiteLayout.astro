@@ -15,9 +15,15 @@ import Header from "../components/Header.astro";
 </Layout>
 
 <style>
+  main {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 768px) {
     main {
-      max-width: 1440px;
-      margin: 0 auto;
       padding: 0 2rem;
     }
+  }
 </style>
