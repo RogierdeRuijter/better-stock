@@ -271,18 +271,15 @@ const images = [
 
 type Image = (typeof images)[number];
 
-const splitIntoThree = (arr: Image[]) => {
-  if (arr.length % 3 !== 0) {
-    throw new Error("Array length is not divisible by 3");
-  }
-
-  const chunkSize = arr.length / 3;
-  return Array.from({ length: 3 }, (_, i) =>
-    arr.slice(i * chunkSize, (i + 1) * chunkSize)
-  );
+const distributeIntoThree = (arr: Image[]) => {
+  const result: Image[][] = [[], [], []];
+  arr.forEach((item, index) => {
+    result[index % 3].push(item);
+  });
+  return result;
 };
 
-const columns = splitIntoThree(images);
+const columns = distributeIntoThree(images);
 ---
 
 <SiteLayout>
