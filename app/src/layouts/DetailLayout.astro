@@ -64,7 +64,7 @@ if (frontmatter.width > frontmatter.height) {
       <source srcset={generateSrcset(getImageResultAvif)} type="image/avif" />
       <source srcset={generateSrcset(getImageResultJpg)} type="image/jpg" />
       <img
-      style={`view-transition-name: image-${imgName}`}
+        style={`view-transition-name: image-${imgName}`}
         loading="lazy"
         src={basePath + "/" + imgName + "_600px.jpg"}
         sizes="100vw"
@@ -98,5 +98,6 @@ if (frontmatter.width > frontmatter.height) {
     height: var(--pageHeight);
     width: var(--imageWidth);
     max-height: var(--max-photo-height);
+    max-width: 100%;
   }
 </style>
