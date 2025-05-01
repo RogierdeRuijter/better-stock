@@ -298,7 +298,11 @@ const columns = distributeIntoThree(images);
           <div class="BreakpointGrid_item" data-testid="item">
             {images.map((image) => (
               <article class="MediaCard_card">
-                <a class="MediaCard_content" data-testid="next-link">
+                <a
+                  href={`/details/${image.name}`}
+                  class="MediaCard_content"
+                  data-testid="next-link"
+                >
                   <picture>
                     <source srcset={image.srcSetAvif} type="image/avif" />
                     <source srcset={image.srcSetJpg} type="image/jpeg" />
@@ -394,6 +398,10 @@ const columns = distributeIntoThree(images);
     }
 
     h3 {
+      font-size: 1.5rem;
+    }
+  </style>
+</SiteLayout>
       font-size: 1.5rem;
     }
   </style>
