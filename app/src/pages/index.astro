@@ -339,8 +339,14 @@ const columns = distributeIntoThree(images);
 
     .Grid_gridWrapper {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
       gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .Grid_gridWrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
 
     .BreakpointGrid_column {
