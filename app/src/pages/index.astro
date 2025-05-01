@@ -294,9 +294,9 @@ const columns = distributeIntoThree(images);
   </div>
   <div class="Grid_gridWrapper">
     {
-      columns.map((images) => (
+      columns.map((images, i) => (
         <div class="BreakpointGrid_column">
-          {images.map((image) => (
+          {images.map((image, j) => (
             <div class="BreakpointGrid_item">
               <article class="MediaCard_card">
                 <a
@@ -312,6 +312,7 @@ const columns = distributeIntoThree(images);
                       src={image.src}
                       sizes="(max-width: 650px) calc((100vw - 42px) / 2), 33vw"
                       alt=""
+                      style={`view-transition-name: image-${image.name};`}
                     />
                   </picture>
                   <div class="MediaCard_overlay" />

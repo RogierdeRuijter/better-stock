@@ -64,6 +64,7 @@ if (frontmatter.width > frontmatter.height) {
       <source srcset={generateSrcset(getImageResultAvif)} type="image/avif" />
       <source srcset={generateSrcset(getImageResultJpg)} type="image/jpg" />
       <img
+      style={`view-transition-name: image-${imgName}`}
         loading="lazy"
         src={basePath + "/" + imgName + "_600px.jpg"}
         sizes="100vw"
