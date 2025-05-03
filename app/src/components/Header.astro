@@ -57,22 +57,19 @@
   }
 
   a {
+    --anchor-color: rgb(230, 30, 20);
+
     text-decoration: underline;
     text-decoration-thickness: 0.125rem;
-    border-bottom: 0.125rem solid;
-    text-decoration-color: rgb(26, 13, 171);
-    border-bottom-color: rgb(26, 13, 171);
+    text-decoration-color: var(--anchor-color);
+
     display: inline-block;
     text-underline-offset: 0.25rem;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
   }
 
-  a:visited {
-    color: var(--text-color-light);
-  }
-
-  a:hover {
-    color: var(--text-color-light);
+  a, a:visited, a:hover {
+    color: var(--anchor-color);
   }
 </style>
