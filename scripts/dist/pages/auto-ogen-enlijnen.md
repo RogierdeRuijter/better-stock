@@ -1,7 +1,8 @@
 ---
 name: auto-ogen-enlijnen
-width: 4853
-height: 3466
+width: 1400
+height: 1000
+displayName: Auto met Ogen en Lijnen
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

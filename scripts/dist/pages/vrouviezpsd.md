@@ -1,7 +1,8 @@
 ---
 name: vrouviezpsd
-width: 8865
-height: 12422
+width: 1400
+height: 1962
+displayName: Vieze Vrouw (PSD)
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

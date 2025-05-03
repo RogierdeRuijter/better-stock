@@ -1,7 +1,8 @@
 ---
 name: vieze-man
-width: 8188
-height: 5836
+width: 1400
+height: 998
+displayName: Vieze Man
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

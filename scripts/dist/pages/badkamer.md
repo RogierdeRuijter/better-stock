@@ -1,7 +1,8 @@
 ---
 name: badkamer
-width: 6304
-height: 9008
+width: 1400
+height: 2001
+displayName: Badkamer
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

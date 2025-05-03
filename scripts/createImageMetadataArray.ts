@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import path from "path";
 import sharp from "sharp";
+import { IMAGE_NAMES } from "./filenames.ts";
+import { getImageMetadata } from "./additionalMetadataImages.ts";
 
 const directoryPath = "./convert-images/assets/transformed";
 
@@ -22,8 +24,12 @@ fs.readdir(directoryPath, async (err, files) => {
       const width = metadata.width ?? 1;
       const height = metadata.height ?? 1;
       const format = metadata.format;
-      const basePath = "${basePath}";
+      const basePath = "/assets";
       const name = file.split("_")[0];
+
+      if (!IMAGE_NAMES.includes(name)) {
+        throw new Error(`File ${file} does not match any known image names.`);
+      }
 
       const item = items.find((item) => item.name === name);
 
@@ -32,7 +38,7 @@ fs.readdir(directoryPath, async (err, files) => {
           src: `${basePath}/${file}`,
           width,
           height,
-          format, 
+          format,
         });
       } else {
         items.push({
@@ -45,7 +51,7 @@ fs.readdir(directoryPath, async (err, files) => {
               src: `${basePath}/${file}`,
               width,
               height,
-              format
+              format,
             },
           ],
         });
@@ -71,7 +77,15 @@ fs.readdir(directoryPath, async (err, files) => {
     delete item.srcSetData;
   }
 
-  fs.writeFileSync("./dist/images.js", JSON.stringify(items, null, 2));
+  for (const item of items) {
+    const imageMetadata = getImageMetadata(item.name);
+
+    Object.assign(item, imageMetadata);
+  }
+
+  const fileContent = `export const images = ${JSON.stringify(items, null, 2)};\n`;
+
+  fs.writeFileSync("./dist/images.ts", fileContent);
 
   console.dir(items, { depth: null });
 });

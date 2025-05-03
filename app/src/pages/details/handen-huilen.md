@@ -1,7 +1,8 @@
 ---
 name: handen-huilen
-width: 3936
-height: 5559
+width: 1400
+height: 1977
+displayName: Handen bij Huilen
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

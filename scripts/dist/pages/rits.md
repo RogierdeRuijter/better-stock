@@ -1,7 +1,8 @@
 ---
 name: rits
-width: 3612
-height: 5794
+width: 1400
+height: 2246
+displayName: Rits
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

@@ -1,7 +1,8 @@
 ---
 name: ingebroken
-width: 4203
-height: 3325
+width: 1400
+height: 1108
+displayName: Ingebroken
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

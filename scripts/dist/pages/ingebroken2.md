@@ -1,7 +1,8 @@
 ---
 name: ingebroken2
-width: 8060
-height: 5739
+width: 1400
+height: 997
+displayName: Ingebroken 2
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

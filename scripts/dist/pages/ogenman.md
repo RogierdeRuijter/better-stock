@@ -1,7 +1,8 @@
 ---
 name: ogenman
-width: 3570
-height: 5833
+width: 1400
+height: 2287
+displayName: Ogenman
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

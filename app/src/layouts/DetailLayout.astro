@@ -5,9 +5,19 @@ import { getImage } from "astro:assets";
 import Navigation from "../components/Navigation.astro";
 import DownloadButton from "../components/DownloadButton.astro";
 
+interface Props {
+  frontmatter: {
+    name: string;
+    width: number;
+    height: number;
+    widths: number[];
+    displayName: string;
+  };
+}
+
 const { frontmatter } = Astro.props;
 
-const { name, width, height, widths } = frontmatter;
+const { name, width, height, widths, displayName } = frontmatter;
 
 const basePath = "/assets";
 
@@ -73,7 +83,7 @@ if (frontmatter.width > frontmatter.height) {
       />
     </picture>
     <h1>
-      {name}
+      {displayName}
     </h1>
   </main>
   <div>

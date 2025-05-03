@@ -1,7 +1,8 @@
 ---
 name: man-auto-lijnen
-width: 4902
-height: 3453
+width: 1400
+height: 986
+displayName: Man, Auto en Lijnen
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

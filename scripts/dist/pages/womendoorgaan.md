@@ -1,7 +1,8 @@
 ---
 name: womendoorgaan
-width: 2776
-height: 4013
+width: 1400
+height: 2024
+displayName: Vrouwen Gaan Door
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

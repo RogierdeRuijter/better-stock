@@ -1,7 +1,8 @@
 ---
 name: onemore
-width: 3455
-height: 4895
+width: 1400
+height: 1984
+displayName: Nog Eentje
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

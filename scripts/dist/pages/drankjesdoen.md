@@ -1,7 +1,8 @@
 ---
 name: drankjesdoen
-width: 5793
-height: 5838
+width: 1400
+height: 1411
+displayName: Drankjes Doen
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

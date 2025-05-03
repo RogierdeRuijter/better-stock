@@ -1,7 +1,8 @@
 ---
 name: youlikethis
-width: 3392
-height: 4863
+width: 1400
+height: 2007
+displayName: Jij Vindt Dit Leuk
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

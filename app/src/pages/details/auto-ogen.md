@@ -1,7 +1,8 @@
 ---
 name: auto-ogen
-width: 4850
-height: 3392
+width: 1400
+height: 979
+displayName: Auto met Ogen
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---
