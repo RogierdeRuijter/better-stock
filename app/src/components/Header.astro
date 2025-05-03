@@ -6,7 +6,7 @@
   <div class="HeroHeader_content">
     <hgroup style="text-align: center">
       <h1>Free stock images of sexual violence</h1>
-      <p style="margin: 0">
+      <p class="HeroHeader_subtitle">
         because
         <a
           class="HeroHeader_link"
@@ -27,12 +27,12 @@
     background-color: var(--background-color-dark);
     padding-block-end: 80px;
     min-height: 20vh;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   @media (min-width: 768px) {
     .HeroHeader_hero {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -40,60 +40,20 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 630px;
     padding: 0 1em;
-    gap: 2rem;
-  }
-
-  .SearchInput_container {
-    position: relative;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 3fr;
-    background: var(--background-color-light);
-    border-color: var(--border-color-light);
-    padding: 0.4em;
-    font-weight: 500;
-  }
-
-  .Button_button {
-    padding: 0.8em 0.7em 0.8em 0;
-    border: 0;
-    background: none;
-    font-weight: inherit;
-    font-size: 1.1em;
-  }
-
-  .Button_text {
-    padding-inline: 24px;
-  }
-
-  .SearchInput_input {
-    appearance: none;
-    border: none;
-    font-family: inherit !important;
-    font-size: inherit;
-    font-weight: inherit;
-    outline: none;
-    background: none;
-  }
-
-  .SearchInput_input:disabled {
-    color: canvastext;
-  }
-
-  [type="search"]::-webkit-search-decoration,
-  [type="search"]::-webkit-search-cancel-button {
-    appearance: none;
   }
 
   h1 {
     font-family: BigShoulders, Oswald, Arial, sans-serif;
     line-height: 1.5;
     letter-spacing: -0.02em;
-    font-size: 2.5em;
+    font-size: 3em;
     margin-bottom: 1rem;
     text-box: trim-both cap alphabetic;
+  }
+
+  .HeroHeader_subtitle {
+    font-size: 1em;
   }
 
   a {
