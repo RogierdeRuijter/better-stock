@@ -97,9 +97,15 @@ if (frontmatter.width > frontmatter.height) {
 >
   main {
     --container-width: 96vw;
-    --max-photo-height: 70svh;
+    --max-photo-height: 65svh;
 
     padding: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    main {
+      --max-photo-height: 70svh;
+    }
   }
 
   .DetailLayout-container {
