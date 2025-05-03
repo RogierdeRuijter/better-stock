@@ -4,13 +4,7 @@
 
 <div class="HeroHeader_hero">
   <div class="HeroHeader_content">
-    <h1
-      class="Text_text__D8yqX Text_size-h49__TD6VW Text_size-h39-mobile__D_FKh Text_color-whiteFFFFFF__LuhCQ spacing_noMargin__F5u9R"
-      style="
-                font-family: BigShoulders, Oswald, sans-serif;
-                line-height: 1.8;
-              "
-    >
+    <h1>
       The best free stock images of sexual violence, because
       <a
         href="https://www.istockphoto.com/se/search/2/image-film?phrase=sexual%20violence"
@@ -45,7 +39,15 @@
     align-items: center;
     color: rgb(234, 236, 240);
     background-color: var(--background-color-dark);
-    min-height: 35rem;
+    padding-block-end: 80px;
+    min-height: 50vh;
+    font-size: 0.8rem;
+  }
+
+  @media (min-width: 768px) {
+    .HeroHeader_hero {
+      font-size: 1rem;
+    }
   }
 
   .HeroHeader_content {
@@ -53,7 +55,7 @@
     flex-direction: column;
     width: 100%;
     max-width: 630px;
-    padding: 0 1rem;
+    padding: 0 1em;
   }
 
   .SearchInput_container {
@@ -68,11 +70,11 @@
   }
 
   .Button_button {
-    padding: 12px 11px 12px 0;
+    padding: 0.8em 0.7em 0.8em 0;
     border: 0;
     background: none;
     font-weight: inherit;
-    font-size: 1.1rem;
+    font-size: 1.1em;
   }
 
   .Button_text {
@@ -90,9 +92,11 @@
   }
 
   h1 {
-    font-family: BigShoulders, Oswald, sans-serif;
+    font-family: BigShoulders, Oswald, Arial, sans-serif;
     line-height: 1.8;
     letter-spacing: -0.02em;
-    font-size: 2.5rem;
+    font-size: 2.5em;
+    margin-top: 0;
+    text-box: trim-both cap alphabetic;
   }
 </style>
