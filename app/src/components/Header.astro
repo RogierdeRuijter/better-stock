@@ -5,12 +5,14 @@
 <div class="HeroHeader_hero">
   <div class="HeroHeader_content">
     <h1>
-      The best free stock images of sexual violence, because
+      The best free stock images of sexual violence. 
+      because
       <a
+        class="HeroHeader_link"
         href="https://www.istockphoto.com/se/search/2/image-film?phrase=sexual%20violence"
         >these</a
       >
-      ones are reducing, harmful and wrong
+      ones are reductionist and harmful
     </h1>
     <form
       role="search"
@@ -22,6 +24,7 @@
         <input
           class="SearchInput_input"
           id="search"
+          disabled
           autocapitalize="none"
           data-testid="search-input"
           placeholder="Search for free images"
@@ -37,7 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(234, 236, 240);
+    color: var(--text-color-light);
     background-color: var(--background-color-dark);
     padding-block-end: 80px;
     min-height: 50vh;
@@ -91,6 +94,15 @@
     background: none;
   }
 
+  .SearchInput_input:disabled {
+    color: canvastext;
+  }
+
+  [type="search"]::-webkit-search-decoration,
+  [type="search"]::-webkit-search-cancel-button {
+    appearance: none;
+  }
+
   h1 {
     font-family: BigShoulders, Oswald, Arial, sans-serif;
     line-height: 1.8;
@@ -98,5 +110,25 @@
     font-size: 2.5em;
     margin-top: 0;
     text-box: trim-both cap alphabetic;
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.125rem;
+    border-bottom: 0.125rem solid;
+    text-decoration-color: rgb(26, 13, 171);
+    border-bottom-color: rgb(26, 13, 171);
+    display: inline-block;
+    text-underline-offset: 0.25rem;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  a:visited {
+    color: var(--text-color-light);
+  }
+
+  a:hover {
+    color: var(--text-color-light);
   }
 </style>

@@ -1,8 +1,8 @@
 ---
-name: indetram
+name: man
 width: 1400
-height: 1387
-displayName: In the Tram
+height: 2280
+displayName: Man
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---
