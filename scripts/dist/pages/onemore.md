@@ -2,7 +2,7 @@
 name: onemore
 width: 1400
 height: 1984
-displayName: Nog Eentje
+displayName: One More
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---

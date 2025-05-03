@@ -10,73 +10,73 @@ export const getImageMetadata = (name: string): ImageMetadata => {
 }
 
 const addDisplayName = (name: string): string => {
-  switch (name) {
+    switch (name) {
     case "aftrekkendeman":
-      return "Aftrekkende Man";
+      return "Masturbating Man";
     case "auto-ogen-enlijnen":
-      return "Auto met Ogen en Lijnen";
+      return "Car with Eyes and Lines";
     case "auto-ogen":
-      return "Auto met Ogen";
+      return "Car with Eyes";
     case "badkamer":
-      return "Badkamer";
+      return "Bathroom";
     case "boos":
-      return "Boze Gezicht";
+      return "Angry Face";
     case "cheers":
-      return "Proost";
+      return "Cheers";
     case "drankjesdoen":
-      return "Drankjes Doen";
+      return "Having Drinks";
     case "engbos-fiets":
-      return "Eng Bos met Fiets";
+      return "Scary Forest with Bicycle";
     case "geest-van-de-harrasor":
-      return "Geest van de Harrasor";
+      return "Ghost of the Harrasor";
     case "handen-enthuis":
-      return "Handen en Thuis";
+      return "Hands and Home";
     case "handen-huilen":
-      return "Handen bij Huilen";
+      return "Hands with Crying";
     case "handenoplichaam":
-      return "Handen op Lichaam";
+      return "Hands on Body";
     case "hoofd4bij5":
-      return "Hoofd 4 bij 5";
+      return "Head 4 by 5";
     case "img-2942":
-      return "Afbeelding 2942";
+      return "Image 2942";
     case "img-2943":
-      return "Afbeelding 2943";
+      return "Image 2943";
     case "indetram":
-      return "In de Tram";
+      return "In the Tram";
     case "ingebroken":
-      return "Ingebroken";
+      return "Broken Into";
     case "ingebroken2":
-      return "Ingebroken 2";
+      return "Broken Into 2";
     case "kruis1":
-      return "Kruis 1";
+      return "Cross 1";
     case "man-auto-lijnen":
-      return "Man, Auto en Lijnen";
+      return "Man, Car and Lines";
     case "man":
       return "Man";
     case "manogen":
-      return "Man met Ogen";
+      return "Man with Eyes";
     case "ogenman":
-      return "Ogenman";
+      return "Eyeman";
     case "onemore":
-      return "Nog Eentje";
+      return "One More";
     case "rits":
-      return "Rits";
+      return "Zipper";
     case "rodeman":
-      return "Rode Man";
+      return "Red Man";
     case "tekst":
-      return "Tekst";
+      return "Text";
     case "untitled-artwork-94":
-      return "Naamloos Kunstwerk 94";
+      return "Untitled Artwork 94";
     case "vieze-man":
-      return "Vieze Man";
+      return "Dirty Man";
     case "viezevrouw":
-      return "Vieze Vrouw";
+      return "Dirty Woman";
     case "vrouviezpsd":
-      return "Vieze Vrouw (PSD)";
+      return "Dirty Woman (PSD)";
     case "womendoorgaan":
-      return "Vrouwen Gaan Door";
+      return "Women Move On";
     case "youlikethis":
-      return "Jij Vindt Dit Leuk";
+      return "You Like This";
     default:
       throw new Error(`Unknown image name: ${name}`);
   }

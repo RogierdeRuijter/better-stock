@@ -4,7 +4,9 @@
   "main": "getWidthHeightImages.js",
   "type": "module",
   "scripts": {
-    "create-metadata": "node createImageMetadataArray.ts"
+    "create-metadata": "node createImageMetadataArray.ts",
+    "copy-metadata": "cp ./dist/images.ts ../app/src/consts/images.ts",
+    "copy-pages": "cp ./dist/pages/*.md ../app/src/pages/details/"
   },
   "keywords": [],
   "author": "",

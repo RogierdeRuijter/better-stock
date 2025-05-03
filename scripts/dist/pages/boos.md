@@ -2,7 +2,7 @@
 name: boos
 width: 1400
 height: 1969
-displayName: Boze Gezicht
+displayName: Angry Face
 widths: [600,1400,2400]
 layout: ../../layouts/DetailLayout.astro
 ---
