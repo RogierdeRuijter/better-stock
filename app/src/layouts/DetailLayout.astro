@@ -59,6 +59,7 @@ if (frontmatter.width > frontmatter.height) {
 <Layout>
   <Navigation />
   <main>
+    <div class="DetailLayout-container">
     <DownloadButton {name}>Free Download</DownloadButton>
     <picture>
       <source srcset={generateSrcset(getImageResultAvif)} type="image/avif" />
@@ -75,6 +76,7 @@ if (frontmatter.width > frontmatter.height) {
       {name}
     </h1>
   </main>
+  <div>
 </Layout>
 
 <style
@@ -87,10 +89,22 @@ if (frontmatter.width > frontmatter.height) {
     --container-width: 96vw;
     --max-photo-height: 70svh;
 
+    padding: 1rem;
+  }
+
+  .DetailLayout-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .DownloadButton {
+    align-self: flex-end;
+    width: 20ch;
+    margin-block-end: 1rem;
   }
 
   img {
