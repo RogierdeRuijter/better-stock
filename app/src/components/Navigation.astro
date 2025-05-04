@@ -1,8 +1,10 @@
 ---
 
+const { ...rest } = Astro.props;
+
 ---
 
-<div class="Navbar_container">
+<div class="Navbar_container" {...rest}>
   <nav class="Wrapper_maxwidth">
     <div class="Navbar_left__e0nHg">
       <div style="display: flex; gap: 1rem; align-items: center">
