@@ -172,14 +172,27 @@ import SiteLayout from "../layouts/SiteLayout.astro";
         communication.
       </p>
       <address>
-        <a href="https://www.instagram.com/jonnabolammers/">@jonnabolammers</a> /
-        <a href="https://www.instagram.com/vaaf.nl/">@vaaf.nl</a>
+        <div>
+          <a href="https://www.instagram.com/jonnabolammers/">@jonnabolammers</a
+          > /
+          <a href="https://www.instagram.com/vaaf.nl/">@vaaf.nl</a>
+        </div>
         info@jonnabo.nl
       </address>
     </article>
     <article>
       <h3>ROGIER DE RUIJTER</h3>
-      <address></address>
+      <p>
+        Is a Dutch Web Developer based in Amsterdam. Through his work, he tries
+        to make the web a more accessible and inclusive place.
+      </p>
+      <address>
+        <div>
+          <a href="https://www.instagram.com/rogierderuiter/">@rogierderuiter</a> /
+        <a href="https://www.rogierderuiter.com">rogierderuiter.com</a>
+        </div>
+        rogierderuijter@icloud.com
+      </address>
     </article>
   </div>
   <script>
@@ -277,5 +290,10 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     to {
       opacity: 1;
     }
+  }
+
+  address {
+    display: flex;
+    flex-direction: column;
   }
 </style>
