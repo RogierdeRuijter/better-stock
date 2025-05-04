@@ -100,6 +100,13 @@ const columns = distributeIntoThree(images);
 
     .DownloadButton {
       position: absolute;
+      pointer-events: none;
+    }
+
+    @media (min-width: 768px) {
+      .DownloadButton {
+        pointer-events: all;
+      }
     }
 
     .MediaCard_card:not(:hover) .DownloadButton {
