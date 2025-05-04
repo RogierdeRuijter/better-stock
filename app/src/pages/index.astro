@@ -17,10 +17,6 @@ const columns = distributeIntoThree(images);
 ---
 
 <SiteLayout>
-  <div class="Controls">
-    <h3>Free stock images</h3>
-    <button>Trending</button>
-  </div>
   <div class="Grid_gridWrapper">
     {
       columns.map((images) => (
@@ -108,35 +104,6 @@ const columns = distributeIntoThree(images);
 
     .MediaCard_card:not(:hover) .DownloadButton {
       display: none;
-    }
-  </style>
-  <style>
-    .Controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 2rem 0;
-    }
-
-    button {
-      color: #191919;
-      background: #fff;
-      border: 1px solid;
-      border-color: #ededed;
-      height: 50px;
-      padding-inline: 1.25rem;
-      font-family: inherit;
-      font-size: 1rem;
-    }
-
-    button:hover {
-      background: #f7f7f7;
-      border-color: #747474;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      font-family: BigShoulders, Oswald, Arial, sans-serif;
     }
   </style>
 </SiteLayout>
