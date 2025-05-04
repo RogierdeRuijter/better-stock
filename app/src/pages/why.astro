@@ -191,7 +191,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
             document.cookie = `cookiesAccepted=${value}; max-age=31536000`;
 
             if (value) {
-              document.querySelector("iframe").setAttribute("data-show", "");
+              document.querySelector("iframe")?.setAttribute("data-show", "");
             }
 
             toggleCookiewall(false);
@@ -215,8 +215,8 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
     function toggleCookiewall(shouldShow: boolean) {
       shouldShow
-        ? document.querySelector("dialog").setAttribute("data-show", "")
-        : document.querySelector("dialog").removeAttribute("data-show");
+        ? document.querySelector("dialog")?.setAttribute("data-show", "")
+        : document.querySelector("dialog")?.removeAttribute("data-show");
     }
   </script>
 
