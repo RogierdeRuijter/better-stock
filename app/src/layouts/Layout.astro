@@ -70,6 +70,19 @@
   @view-transition {
     navigation: auto;
   }
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.125rem;
+
+    text-underline-offset: 0.25rem;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  a:hover {
+    text-decoration-color: transparent;
+  }
 </style>
 
 {/* reset */}
