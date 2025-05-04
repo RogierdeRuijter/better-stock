@@ -93,9 +93,9 @@ import SiteLayout from "../layouts/SiteLayout.astro";
       <dialog>
         <h3>Accept cookies to watch YouTube video</h3>
         <p>
-          This website uses YouTube to play a video. YouTube uses cookies to track
-          your behavior. If you want to watch the video on this website, you need to
-          accept the cookies.
+          This website uses YouTube to play a video. YouTube uses cookies to
+          track your behavior. If you want to watch the video on this website,
+          you need to accept the cookies.
         </p>
         <div class="button-container">
           <button onclick="acceptCookies()">Accept cookies</button>
@@ -192,7 +192,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
             if (value) {
               document.querySelector("iframe").setAttribute("data-show", "");
-            } 
+            }
 
             toggleCookiewall(false);
           }
@@ -216,9 +216,8 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     function toggleCookiewall(shouldShow: boolean) {
       shouldShow
         ? document.querySelector("dialog").setAttribute("data-show", "")
-      : document.querySelector("dialog").removeAttribute("data-show");
+        : document.querySelector("dialog").removeAttribute("data-show");
     }
-
   </script>
 
   <script is:inline>
@@ -229,7 +228,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     function declineCookies() {
       document.body.setAttribute("data-cookie-accepted", "false");
     }
-</script>
+  </script>
 </SiteLayout>
 <style>
   .Why-container {
