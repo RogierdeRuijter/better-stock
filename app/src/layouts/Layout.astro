@@ -58,6 +58,15 @@
     line-height: 1.4;
   }
 
+  body {
+    --container-inline-padding: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      --container-inline-padding: 2rem;
+    }
+  }
   @view-transition {
     navigation: auto;
   }
