@@ -60,9 +60,9 @@
     --anchor-color: rgb(0, 0, 255);
   }
 
-  @supports (color: oklch(0% 0 0)) {
+  @media (prefers-color-scheme: dark) {
     a {
-      --anchor-color: oklch(0.47 0.3207 264.052);
+      --anchor-color: rgb(148, 192, 255);
     }
   }
 
