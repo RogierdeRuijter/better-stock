@@ -36,19 +36,19 @@ const addDisplayName = (name: string): string => {
     case "handenoplichaam":
       return "Hands on Body";
     case "hoofd4bij5":
-      return "Head 4 by 5";
+      return "Disassociation";
     case "img-2942":
-      return "Image 2942";
+      return "Meat on Subway";
     case "img-2943":
-      return "Image 2943";
+      return "Worms in Stumach";
     case "indetram":
       return "In the Tram";
     case "ingebroken":
-      return "Broken Into";
+      return "Broken Into Women";
     case "ingebroken2":
-      return "Broken Into 2";
+      return "Broken Into Person";
     case "kruis1":
-      return "Cross 1";
+      return "Zipper";
     case "man-auto-lijnen":
       return "Man, Car and Lines";
     case "man":
@@ -66,7 +66,7 @@ const addDisplayName = (name: string): string => {
     case "tekst":
       return "Text";
     case "untitled-artwork-94":
-      return "Untitled Artwork 94";
+      return "Agressor";
     case "vieze-man":
       return "Dirty Man";
     case "viezevrouw":
@@ -81,6 +81,10 @@ const addDisplayName = (name: string): string => {
       throw new Error(`Unknown image name: ${name}`);
   }
 }
+
+// Disassociation
+// POV asault
+// He touched my leg
 
 const addSerieNumber = (name: string): number => {
   const serieOne = ["viezevrouw", "womendoorgaan"];
