@@ -50,14 +50,23 @@
     font-weight: bold;
   }
 
-  h1, .HeroHeader_subtitle {
+  h1,
+  .HeroHeader_subtitle {
     text-wrap: balance;
     text-wrap: pretty;
   }
 
   a {
     --anchor-color: rgb(0, 0, 255);
+  }
 
+  @supports (color: oklch(0% 0 0)) {
+    a {
+      --anchor-color: oklch(0.47 0.3207 264.052);
+    }
+  }
+
+  a {
     text-decoration: underline;
     text-decoration-thickness: 0.125rem;
     text-decoration-color: var(--anchor-color);
@@ -76,7 +85,6 @@
     /* background: -webkit-linear-gradient(#eee, #333);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
-
   }
 
   a:hover {
