@@ -2,62 +2,58 @@
 
 ---
 
-<div class="HeroHeader_hero">
-  <div class="HeroHeader_content">
-    <hgroup class="HeroHeader-group">
-      <h1>Free stock images of sexual violence</h1>
-      <p class="HeroHeader_subtitle">
-        because
-        <a
-          class="HeroHeader_link"
-          href="https://www.istockphoto.com/se/search/2/image-film?phrase=sexual%20violence"
-          >the ones we know</a
-        >
-        are unempathetic and harmful
-      </p>
-    </hgroup>
+<div class="HeroHeader">
+  <div class="HeroHeader_hero">
+    <div class="HeroHeader_content">
+      <hgroup class="HeroHeader-group">
+        <h1>Free stock images of sexual violence</h1>
+        <p class="HeroHeader_subtitle">
+          because
+          <a
+            class="HeroHeader_link"
+            href="https://www.istockphoto.com/se/search/2/image-film?phrase=sexual%20violence"
+            >the ones we know</a
+          >
+          are unempathetic and harmful
+        </p>
+      </hgroup>
+    </div>
   </div>
 </div>
 <style>
   .HeroHeader_hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: var(--text-color-light);
     background-color: var(--background-color-dark);
-    padding: 7rem 0 3rem;
+    padding: 6rem 0 1rem;
     font-size: 1rem;
   }
 
   .HeroHeader_content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
     padding: 0 var(--container-inline-padding);
   }
 
   h1 {
-    font-family: BigShoulders, Oswald, Arial, sans-serif;
+    font-family: Oswald, Arial, sans-serif;
     line-height: 1.5;
-    font-size: 2.5em;
-    margin: 0 0 1rem;
+    font-size: 1.75em;
+    margin: 0 0 0.75em;
     text-box: trim-both cap alphabetic;
   }
 
   .HeroHeader_subtitle {
     font-size: 1em;
     margin: 0;
-    font-weight: bold;
+    font-weight: 400;
+    text-box: trim-both cap alphabetic;
   }
 
-  h1,
-  .HeroHeader_subtitle {
+  h1 {
     text-wrap: balance;
     text-wrap: pretty;
   }
 
   a {
-      --anchor-color: rgb(148, 192, 255);
+    --anchor-color: rgb(148, 192, 255);
     text-decoration: underline;
     text-decoration-thickness: 0.125rem;
     text-decoration-color: var(--anchor-color);
@@ -85,7 +81,7 @@
   @media (min-width: 768px) {
     .HeroHeader_hero {
       font-size: 1.25rem;
-      padding: 6rem 0 3rem;
+      padding: 5rem 0 1rem;
     }
 
     .HeroHeader-group {
@@ -94,11 +90,12 @@
 
     h1 {
       font-size: 2.5em;
-      min-height: 61px;
+      margin: 0 0 0.5em;
     }
 
     .HeroHeader_subtitle {
       font-size: 1em;
+      font-weight: 700;
     }
   }
 </style>
