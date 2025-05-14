@@ -24,7 +24,7 @@ fs.readdir(directoryPath, async (err, files) => {
       const width = metadata.width ?? 1;
       const height = metadata.height ?? 1;
       const format = metadata.format;
-      const basePath = "/better-stock/assets";
+      const basePath = "/assets";
       const name = file.split("_")[0];
 
       if (!IMAGE_NAMES.includes(name)) {
