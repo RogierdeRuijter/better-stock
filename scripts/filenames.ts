@@ -1,8 +1,9 @@
 import { ImageName } from "./imageNames.ts";
 
-export const IMAGE_NAMES: ImageName[] = [
+export const IMAGE_NAMES = [
   ImageName.Aftrekkendeman,
   ImageName.AutoOgenEnlijnen,
+  ImageName.Handenoplichaam,
   ImageName.AutoOgen,
   ImageName.Badkamer,
   ImageName.Boos,
@@ -12,7 +13,6 @@ export const IMAGE_NAMES: ImageName[] = [
   ImageName.GeestVanDeHarrasor,
   ImageName.HandenEnthuis,
   ImageName.HandenHuilen,
-  ImageName.Handenoplichaam,
   ImageName.Hoofd4bij5,
   ImageName.Img2942,
   ImageName.Img2943,
