@@ -1,5 +1,5 @@
 ---
-
+import DownloadButton from "./DownloadButton.astro";
 ---
 
 <div class="HeroHeader">
@@ -24,12 +24,17 @@
   .HeroHeader_hero {
     color: var(--text-color-light);
     background-color: var(--background-color-dark);
-    padding: 6rem 0 1rem;
+    padding: 6rem 0 2rem;
     font-size: 1rem;
   }
 
   .HeroHeader_content {
     padding: 0 var(--container-inline-padding);
+  }
+
+  .DownloadButton {
+    width: fit-content;
+    margin: 2rem 0 0;
   }
 
   h1 {
@@ -52,7 +57,7 @@
     text-wrap: pretty;
   }
 
-  a {
+  .HeroHeader_link {
     --anchor-color: rgb(148, 192, 255);
     text-decoration: underline;
     text-decoration-thickness: 0.125rem;
@@ -64,9 +69,9 @@
     transition: all 0.3s ease-in-out;
   }
 
-  a,
-  a:visited,
-  a:hover {
+  .HeroHeader_link,
+  .HeroHeader_link:visited,
+  .HeroHeader_link:hover {
     color: var(--anchor-color);
 
     /* background: -webkit-linear-gradient(#eee, #333);
@@ -81,7 +86,7 @@
   @media (min-width: 768px) {
     .HeroHeader_hero {
       font-size: 1.25rem;
-      padding: 5rem 0 1rem;
+      padding: 6rem 0 2rem;
     }
 
     .HeroHeader-group {
@@ -96,6 +101,10 @@
     .HeroHeader_subtitle {
       font-size: 1em;
       font-weight: 700;
+    }
+
+    .DownloadButton {
+      margin: 2rem auto 0 auto;
     }
   }
 </style>

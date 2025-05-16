@@ -1,5 +1,6 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+import DownloadIcon from "../components/DownloadIcon.astro";
 import DownloadButton from "../components/DownloadButton.astro";
 import { images } from "../consts/images";
 
@@ -17,6 +18,9 @@ const columns = distributeIntoThree(images);
 ---
 
 <SiteLayout>
+  <div class="ButtonContainer">
+    <DownloadIcon /> Download and use these images for free!
+  </div>
   <div class="Grid_gridWrapper">
     {
       columns.map((images) => (
@@ -68,6 +72,17 @@ const columns = distributeIntoThree(images);
         grid-template-columns: 1fr 1fr 1fr;
       }
     }
+    .ButtonContainer {
+      padding: 0 0 2rem;
+      font-weight: 700;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .ButtonContainer .DownloadButton {
+      width: fit-content;
+    }
 
     .BreakpointGrid_column {
       display: flex;
@@ -98,13 +113,18 @@ const columns = distributeIntoThree(images);
       opacity: 1;
     }
 
-    .DownloadButton {
+    .MediaCard_card .DownloadButton {
       position: absolute;
       display: none;
     }
 
     @media (min-width: 768px) {
-      .DownloadButton {
+      .ButtonContainer {
+        display: flex;
+        justify-content: center;
+      }
+
+      .MediaCard_card .DownloadButton {
         display: flex;
       }
     }
