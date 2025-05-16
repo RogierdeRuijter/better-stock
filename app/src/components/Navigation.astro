@@ -57,14 +57,30 @@ const { ...rest } = Astro.props;
         </a>
       </div>
     </div>
-    <div class="Navigation-linksContainer" >
-      <a class="Navigation-why" href="/why">Why</a>
-      <a class="Navigation-why" href="/about-the-creators">About the creators</a>
+
+    <div>
+      <button class="menuButton" popovertarget="menu">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" viewBox="0 0 50 50" fill="white">
+         <path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"></path>
+        </svg>
+      </button>
+      <div class="Navigation-linksContainer" popover id="menu">
+        <a class="Navigation-why" href="/why">Why</a>
+        <a class="Navigation-why" href="/about-the-creators">About the creators</a>
+      </div>
     </div>
   </nav>
 </div>
 
 <style>
+  .menuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
+
   .Wrapper_maxwidth {
     display: flex;
     align-items: center;
@@ -75,8 +91,7 @@ const { ...rest } = Astro.props;
 
   .Navbar_container {
     background-color: var(--background-color-dark);
-    /* position: absolute;
-    width: 100%; */
+    color: var(--text-color-light);
   }
 
   .Navbar_logo {
@@ -85,12 +100,31 @@ const { ...rest } = Astro.props;
 
   .Navigation-why,
   .Navigation-why:visited {
-    color: var(--text-color-light);
     font-size: 1.2em;
+    color: currentcolor;
+  }
+
+  [popover]:popover-open {
+    color: black;
+      flex-direction: column;
   }
 
   .Navigation-linksContainer {
     display: flex;
     gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .menuButton {
+      display: none;
+    }
+
+    [popover] {
+      display: flex;
+      position: static;
+      background: none;
+      color: var(--text-color-light);
+      border: none;
+    }
   }
 </style>
