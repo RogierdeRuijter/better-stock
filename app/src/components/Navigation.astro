@@ -57,8 +57,9 @@ const { ...rest } = Astro.props;
         </a>
       </div>
     </div>
-    <div>
-      <a class="Navigation-why" href="/why"> Why </a>
+    <div class="Navigation-linksContainer" >
+      <a class="Navigation-why" href="/why">Why</a>
+      <a class="Navigation-why" href="/about-the-creators">About the creators</a>
     </div>
   </nav>
 </div>
@@ -86,5 +87,10 @@ const { ...rest } = Astro.props;
   .Navigation-why:visited {
     color: var(--text-color-light);
     font-size: 1.2em;
+  }
+
+  .Navigation-linksContainer {
+    display: flex;
+    gap: 1rem;
   }
 </style>
