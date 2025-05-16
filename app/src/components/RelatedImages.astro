@@ -1,0 +1,87 @@
+---
+import Picture from "./Picture.astro";
+
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+
+import { images as globalImages } from "../consts/images";
+
+const serieNumber = globalImages.find(
+  (image) => image.name === name,
+)?.serieNumber;
+
+if (serieNumber === undefined) {
+  return;
+}
+
+const serieImages = globalImages.filter(
+  (image) => image.serieNumber === serieNumber && image.name !== name,
+);
+
+const widthsRelated = [600, 1400];
+
+type Image = (typeof globalImages)[number];
+
+const distributeIntoThree = (arr: Image[]) => {
+  const result: Image[][] = [[], [], []];
+  arr.forEach((item, index) => {
+    result[index % 3].push(item);
+  });
+  return result;
+};
+
+const columns = distributeIntoThree(serieImages);
+---
+
+<aside>
+  <h2>Related images</h2>
+  <div class="DetailLayout-related">
+    {
+      columns.map((images) => (
+        <div class="BreakpointGrid_column">
+          {images.map((image) => (
+            <div class="BreakpointGrid_item">
+              <article class="MediaCard_card">
+                <a
+                  href={`/details/${image.name}`}
+                  class="MediaCard_content"
+                  data-testid="next-link"
+                >
+                  <Picture
+                    widths={widthsRelated}
+                    name={image.name}
+                    width={image.width}
+                    height={image.height}
+                    doViewTransition={false}
+                  />
+                </a>
+              </article>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</aside>
+<style>
+  aside {
+    padding: 2rem;
+    background-color: var(--background-color-light-dark);
+  }
+
+  .DetailLayout-related {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-block-start: 2rem;
+  }
+
+  .BreakpointGrid_column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+</style>

@@ -1,100 +1,124 @@
+import { ImageName } from "./imageNames.ts";
+
 interface ImageMetadata {
   displayName: string;
-  // serieNumber: number;
+  serieNumber: number | undefined;
 }
 
 export const getImageMetadata = (name: string): ImageMetadata => {
   return {
-    displayName: addDisplayName(name)
-  }
-}
+    displayName: addDisplayName(name),
+    serieNumber: addSerieNumber(name),
+  };
+};
 
 const addDisplayName = (name: string): string => {
-    switch (name) {
-    case "aftrekkendeman":
+  switch (name) {
+    case ImageName.Aftrekkendeman:
       return "Masturbating Man";
-    case "auto-ogen-enlijnen":
+    case ImageName.AutoOgenEnlijnen:
       return "Car with Eyes and Lines";
-    case "auto-ogen":
+    case ImageName.AutoOgen:
       return "Car with Eyes";
-    case "badkamer":
+    case ImageName.Badkamer:
       return "Bathroom";
-    case "boos":
+    case ImageName.Boos:
       return "Angry Face";
-    case "cheers":
+    case ImageName.Cheers:
       return "Cheers";
-    case "drankjesdoen":
+    case ImageName.Drankjesdoen:
       return "Having Drinks";
-    case "engbos-fiets":
+    case ImageName.EngbosFiets:
       return "Scary Forest with Bicycle";
-    case "geest-van-de-harrasor":
+    case ImageName.GeestVanDeHarrasor:
       return "Ghost of the Harrasor";
-    case "handen-enthuis":
+    case ImageName.HandenEnthuis:
       return "Hands and Home";
-    case "handen-huilen":
+    case ImageName.HandenHuilen:
       return "Hands with Crying";
-    case "handenoplichaam":
+    case ImageName.Handenoplichaam:
       return "Hands on Body";
-    case "hoofd4bij5":
+    case ImageName.Hoofd4bij5:
       return "Disassociation";
-    case "img-2942":
+    case ImageName.Img2942:
       return "Meat on Subway";
-    case "img-2943":
+    case ImageName.Img2943:
       return "Worms in Stumach";
-    case "indetram":
+    case ImageName.Indetram:
       return "In the Tram";
-    case "ingebroken":
+    case ImageName.Ingebroken:
       return "Broken Into Women";
-    case "ingebroken2":
+    case ImageName.Ingebroken2:
       return "Broken Into Person";
-    case "kruis1":
+    case ImageName.Kruis1:
       return "Zipper";
-    case "man-auto-lijnen":
+    case ImageName.ManAutoLijnen:
       return "Man, Car and Lines";
-    case "man":
+    case ImageName.Man:
       return "Man";
-    case "manogen":
+    case ImageName.Manogen:
       return "Man with Eyes";
-    case "ogenman":
+    case ImageName.Ogenman:
       return "Eyeman";
-    case "onemore":
+    case ImageName.Onemore:
       return "One More";
-    case "rits":
+    case ImageName.Rits:
       return "Zipper";
-    case "rodeman":
+    case ImageName.Rodeman:
       return "Red Man";
-    case "tekst":
+    case ImageName.Tekst:
       return "Text";
-    case "untitled-artwork-94":
+    case ImageName.UntitledArtwork94:
       return "Agressor";
-    case "vieze-man":
+    case ImageName.ViezeMan:
       return "Dirty Man";
-    case "viezevrouw":
+    case ImageName.Viezevrouw:
       return "Dirty Woman";
-    case "vrouviezpsd":
+    case ImageName.Vrouviezpsd:
       return "Dirty Woman (PSD)";
-    case "womendoorgaan":
+    case ImageName.Womendoorgaan:
       return "Women Move On";
-    case "youlikethis":
+    case ImageName.Youlikethis:
       return "You Like This";
     default:
       throw new Error(`Unknown image name: ${name}`);
   }
-}
+};
 
 // Disassociation
 // POV asault
 // He touched my leg
+const addSerieNumber = (name: string): number | undefined => {
+  const feelingFollowingYou: string[] = [
+    ImageName.Drankjesdoen,
+    ImageName.HandenEnthuis,
+    ImageName.Indetram,
+  ];
 
-const addSerieNumber = (name: string): number => {
-  const serieOne = ["viezevrouw", "womendoorgaan"];
-  const serieTwo = ["aftrekkendeman", "auto-ogen-enlijnen"];
+  const firstDate: string[] = [
+    ImageName.Cheers,
+    ImageName.Onemore,
+    ImageName.Tekst,
+    ImageName.Youlikethis,
+  ];
 
-  if (serieOne.includes(name)) {
+  const metroIncident: string[] = [
+    ImageName.Aftrekkendeman,
+    // ImageName.Bijstanders,        // ⚠️ Not in your original enum — see note below
+    // ImageName.Boek,               // ⚠️ Not in your original enum — see note below
+    ImageName.Kruis1,
+    ImageName.Man,
+    ImageName.Manogen,
+    // "ogen" — ⚠️ Not present in the enum, maybe you meant "ogenman"?
+    ImageName.Ogenman,
+    ImageName.Rits
+  ];
+
+  if (feelingFollowingYou.includes(name)) {
     return 1;
-  } else if (serieTwo.includes(name)) {
+  } else if (firstDate.includes(name)) {
     return 2;
-  } else {
-    throw new Error(`Unknown image name: ${name}`);
+  } else if (metroIncident.includes(name)) {
+    return 3;
   }
-}
+};

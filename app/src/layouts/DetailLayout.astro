@@ -1,9 +1,9 @@
 ---
-import type { GetImageResult } from "astro";
 import Layout from "./Layout.astro";
-import { getImage } from "astro:assets";
 import Navigation from "../components/Navigation.astro";
+import RelatedImages from "../components/RelatedImages.astro";
 import DownloadButton from "../components/DownloadButton.astro";
+import Picture from "../components/Picture.astro";
 
 interface Props {
   frontmatter: {
@@ -19,82 +19,24 @@ const { frontmatter } = Astro.props;
 
 const { name, width, height, widths, displayName } = frontmatter;
 
-const basePath = "/assets";
-
-const imgName = name;
-
-const getImageResultJpg = await getImage({
-  src: `/assets/${name}`,
-  widths,
-  format: "jpg",
-  width,
-  height,
-});
-
-const getImageResultAvif = await getImage({
-  src: `/assets/${name}`,
-  widths,
-  format: "avif",
-  width,
-  height,
-});
-
-const generateSrcset = (getImageResult: GetImageResult): string => {
-  let srcset = "";
-  const values = getImageResult.srcSet.values;
-
-  values.forEach((value) => {
-    const { src, width, format } = value.transform;
-    const attribute = `${src}_${width}px.${format} ${value.descriptor}`;
-    srcset += attribute;
-
-    if (value !== values[values.length - 1]) {
-      srcset += ", ";
-    }
-  });
-
-  return srcset;
-};
-
-let imageWidth = "auto";
-let pageHeight = "auto";
-
-if (frontmatter.width > frontmatter.height) {
-  imageWidth = `calc(var(--max-photo-height) * ${frontmatter.width} / ${frontmatter.height})`;
-} else {
-  pageHeight = `calc(var(--container-width) * ${frontmatter.height} / ${frontmatter.width})`;
-}
 ---
 
 <Layout>
   <Navigation />
   <main>
     <div class="DetailLayout-container">
-    <DownloadButton {name}>Free Download</DownloadButton>
-    <picture>
-      <source srcset={generateSrcset(getImageResultAvif)} type="image/avif" />
-      <source srcset={generateSrcset(getImageResultJpg)} type="image/jpg" />
-      <img
-        style={`view-transition-name: image-${imgName}`}
-        loading="lazy"
-        src={basePath + "/" + imgName + "_600px.jpg"}
-        sizes="100vw"
-        alt=""
-      />
-    </picture>
-    <h1>
-      {displayName}
-    </h1>
+      <DownloadButton {name}>Free Download</DownloadButton>
+      <Picture widths={widths} name={name} width={width} height={height} />
+      <h1>
+        {displayName}
+      </h1>
+    </div>
   </main>
-  <div>
+  <aside>
+    <RelatedImages {name} />
+  </aside>
 </Layout>
-
-<style
-  define:vars={{
-    imageWidth,
-    pageHeight,
-  }}
->
+<style>
   main {
     --container-width: 96vw;
     --max-photo-height: 65svh;
@@ -121,13 +63,5 @@ if (frontmatter.width > frontmatter.height) {
     align-self: flex-end;
     width: 20ch;
     margin-block-end: 1rem;
-  }
-
-  img {
-    display: block;
-    height: var(--pageHeight);
-    width: var(--imageWidth);
-    max-height: var(--max-photo-height);
-    max-width: 100%;
   }
 </style>

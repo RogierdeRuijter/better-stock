@@ -6,7 +6,8 @@ export const images = [
     "height": 886,
     "srcSetAvif": "/assets/aftrekkendeman_1400px.avif 1400w, /assets/aftrekkendeman_2400px.avif 2400w, /assets/aftrekkendeman_600px.avif 600w",
     "srcSetJpg": "/assets/aftrekkendeman_1400px.jpg 1400w, /assets/aftrekkendeman_2400px.jpg 2400w, /assets/aftrekkendeman_600px.jpg 600w",
-    "displayName": "Masturbating Man"
+    "displayName": "Masturbating Man",
+    "serieNumber": 3
   },
   {
     "name": "auto-ogen-enlijnen",
@@ -51,7 +52,8 @@ export const images = [
     "height": 1980,
     "srcSetAvif": "/assets/cheers_1400px.avif 1400w, /assets/cheers_2400px.avif 2400w, /assets/cheers_600px.avif 600w",
     "srcSetJpg": "/assets/cheers_1400px.jpg 1400w, /assets/cheers_2400px.jpg 2400w, /assets/cheers_600px.jpg 600w",
-    "displayName": "Cheers"
+    "displayName": "Cheers",
+    "serieNumber": 2
   },
   {
     "name": "drankjesdoen",
@@ -60,7 +62,8 @@ export const images = [
     "height": 1411,
     "srcSetAvif": "/assets/drankjesdoen_1400px.avif 1400w, /assets/drankjesdoen_2400px.avif 2400w, /assets/drankjesdoen_600px.avif 600w",
     "srcSetJpg": "/assets/drankjesdoen_1400px.jpg 1400w, /assets/drankjesdoen_2400px.jpg 2400w, /assets/drankjesdoen_600px.jpg 600w",
-    "displayName": "Having Drinks"
+    "displayName": "Having Drinks",
+    "serieNumber": 1
   },
   {
     "name": "engbos-fiets",
@@ -87,7 +90,8 @@ export const images = [
     "height": 1387,
     "srcSetAvif": "/assets/handen-enthuis_1400px.avif 1400w, /assets/handen-enthuis_2400px.avif 2400w, /assets/handen-enthuis_600px.avif 600w",
     "srcSetJpg": "/assets/handen-enthuis_1400px.jpg 1400w, /assets/handen-enthuis_2400px.jpg 2400w, /assets/handen-enthuis_600px.jpg 600w",
-    "displayName": "Hands and Home"
+    "displayName": "Hands and Home",
+    "serieNumber": 1
   },
   {
     "name": "handen-huilen",
@@ -141,7 +145,8 @@ export const images = [
     "height": 1387,
     "srcSetAvif": "/assets/indetram_1400px.avif 1400w, /assets/indetram_2400px.avif 2400w, /assets/indetram_600px.avif 600w",
     "srcSetJpg": "/assets/indetram_1400px.jpg 1400w, /assets/indetram_2400px.jpg 2400w, /assets/indetram_600px.jpg 600w",
-    "displayName": "In the Tram"
+    "displayName": "In the Tram",
+    "serieNumber": 1
   },
   {
     "name": "ingebroken2",
@@ -168,7 +173,8 @@ export const images = [
     "height": 886,
     "srcSetAvif": "/assets/kruis1_1400px.avif 1400w, /assets/kruis1_2400px.avif 2400w, /assets/kruis1_600px.avif 600w",
     "srcSetJpg": "/assets/kruis1_1400px.jpg 1400w, /assets/kruis1_2400px.jpg 2400w, /assets/kruis1_600px.jpg 600w",
-    "displayName": "Zipper"
+    "displayName": "Zipper",
+    "serieNumber": 3
   },
   {
     "name": "man-auto-lijnen",
@@ -186,7 +192,8 @@ export const images = [
     "height": 2280,
     "srcSetAvif": "/assets/man_1400px.avif 1400w, /assets/man_2400px.avif 2400w, /assets/man_600px.avif 600w",
     "srcSetJpg": "/assets/man_1400px.jpg 1400w, /assets/man_2400px.jpg 2400w, /assets/man_600px.jpg 600w",
-    "displayName": "Man"
+    "displayName": "Man",
+    "serieNumber": 3
   },
   {
     "name": "manogen",
@@ -195,7 +202,8 @@ export const images = [
     "height": 877,
     "srcSetAvif": "/assets/manogen_1400px.avif 1400w, /assets/manogen_2400px.avif 2400w, /assets/manogen_600px.avif 600w",
     "srcSetJpg": "/assets/manogen_1400px.jpg 1400w, /assets/manogen_2400px.jpg 2400w, /assets/manogen_600px.jpg 600w",
-    "displayName": "Man with Eyes"
+    "displayName": "Man with Eyes",
+    "serieNumber": 3
   },
   {
     "name": "ogenman",
@@ -204,7 +212,8 @@ export const images = [
     "height": 2287,
     "srcSetAvif": "/assets/ogenman_1400px.avif 1400w, /assets/ogenman_2400px.avif 2400w, /assets/ogenman_600px.avif 600w",
     "srcSetJpg": "/assets/ogenman_1400px.jpg 1400w, /assets/ogenman_2400px.jpg 2400w, /assets/ogenman_600px.jpg 600w",
-    "displayName": "Eyeman"
+    "displayName": "Eyeman",
+    "serieNumber": 3
   },
   {
     "name": "onemore",
@@ -213,7 +222,8 @@ export const images = [
     "height": 1984,
     "srcSetAvif": "/assets/onemore_1400px.avif 1400w, /assets/onemore_2400px.avif 2400w, /assets/onemore_600px.avif 600w",
     "srcSetJpg": "/assets/onemore_1400px.jpg 1400w, /assets/onemore_2400px.jpg 2400w, /assets/onemore_600px.jpg 600w",
-    "displayName": "One More"
+    "displayName": "One More",
+    "serieNumber": 2
   },
   {
     "name": "rits",
@@ -222,7 +232,8 @@ export const images = [
     "height": 2246,
     "srcSetAvif": "/assets/rits_1400px.avif 1400w, /assets/rits_2400px.avif 2400w, /assets/rits_600px.avif 600w",
     "srcSetJpg": "/assets/rits_1400px.jpg 1400w, /assets/rits_2400px.jpg 2400w, /assets/rits_600px.jpg 600w",
-    "displayName": "Zipper"
+    "displayName": "Zipper",
+    "serieNumber": 3
   },
   {
     "name": "rodeman",
@@ -240,7 +251,8 @@ export const images = [
     "height": 1972,
     "srcSetAvif": "/assets/tekst_1400px.avif 1400w, /assets/tekst_2400px.avif 2400w, /assets/tekst_600px.avif 600w",
     "srcSetJpg": "/assets/tekst_1400px.jpg 1400w, /assets/tekst_2400px.jpg 2400w, /assets/tekst_600px.jpg 600w",
-    "displayName": "Text"
+    "displayName": "Text",
+    "serieNumber": 2
   },
   {
     "name": "untitled-artwork-94",
@@ -294,6 +306,7 @@ export const images = [
     "height": 2007,
     "srcSetAvif": "/assets/youlikethis_1400px.avif 1400w, /assets/youlikethis_2400px.avif 2400w, /assets/youlikethis_600px.avif 600w",
     "srcSetJpg": "/assets/youlikethis_1400px.jpg 1400w, /assets/youlikethis_2400px.jpg 2400w, /assets/youlikethis_600px.jpg 600w",
-    "displayName": "You Like This"
+    "displayName": "You Like This",
+    "serieNumber": 2
   }
 ];

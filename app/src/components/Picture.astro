@@ -1,0 +1,88 @@
+---
+import { getImage } from "astro:assets";
+import type { GetImageResult } from "astro";
+
+interface Props {
+  widths: number[];
+  name: string;
+  width: number;
+  height: number;
+  doViewTransition?: boolean;
+}
+
+const { widths, name, width, height, doViewTransition = true } = Astro.props;
+
+const basePath = "/assets";
+
+const imgName = name;
+
+const getImageResultJpg = await getImage({
+  src: `/assets/${name}`,
+  widths,
+  format: "jpg",
+  width,
+  height,
+});
+
+const getImageResultAvif = await getImage({
+  src: `/assets/${name}`,
+  widths,
+  format: "avif",
+  width,
+  height,
+});
+
+const generateSrcset = (getImageResult: GetImageResult): string => {
+  let srcset = "";
+  const values = getImageResult.srcSet.values;
+
+  values.forEach((value) => {
+    const { src, width, format } = value.transform;
+    const attribute = `${src}_${width}px.${format} ${value.descriptor}`;
+    srcset += attribute;
+
+    if (value !== values[values.length - 1]) {
+      srcset += ", ";
+    }
+  });
+
+  return srcset;
+};
+
+let imageWidth = "auto";
+let pageHeight = "auto";
+
+if (width > height) {
+  imageWidth = `calc(var(--max-photo-height) * ${width} / ${height})`;
+} else {
+  pageHeight = `calc(var(--container-width) * ${height} / ${width})`;
+}
+---
+
+<picture>
+  <source srcset={generateSrcset(getImageResultAvif)} type="image/avif" />
+  <source srcset={generateSrcset(getImageResultJpg)} type="image/jpg" />
+  <img
+  style={doViewTransition ? `view-transition-name: image-${imgName}` : ""}
+    loading="lazy"
+    src={basePath + "/" + imgName + "_600px.jpg"}
+    sizes="100vw"
+    alt=""
+  />
+</picture>
+
+<style
+  define:vars={{
+    imageWidth,
+    pageHeight,
+  }}
+>
+  img {
+    display: block;
+    height: var(--pageHeight);
+    width: var(--imageWidth);
+    max-height: var(--max-photo-height);
+    max-width: 100%;
+    object-fit: cover;
+  }
+</style>
