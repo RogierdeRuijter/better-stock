@@ -1,0 +1,19 @@
+---
+import Layout from "./Layout.astro";
+import Navigation from "../components/Navigation.astro";
+---
+
+<Layout>
+  <Navigation />
+  <main>
+    <slot />
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: var(--container-inline-padding);
+  }
+</style>

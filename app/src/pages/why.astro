@@ -1,8 +1,8 @@
 ---
-import SiteLayout from "../layouts/SiteLayout.astro";
+import InfoLayout from "../layouts/InfoLayout.astro";
 ---
 
-<SiteLayout>
+<InfoLayout showHeader={false}>
   <div class="Why-container">
     <header>
       <h1>WHY</h1>
@@ -210,7 +210,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
       document.body.setAttribute("data-cookie-accepted", "false");
     }
   </script>
-</SiteLayout>
+</InfoLayout>
 <style>
   .Why-container {
     max-width: 65ch;
