@@ -1,0 +1,91 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout>
+  <div class="Container">
+    <header>
+      <h2>ABOUT THE CREATORS</h2>
+      This website is a joined affort between Jonna Bo Lammers and Rogier de Ruijter.
+      Where Jonna is the illustrator and Rogier is the web developer.
+    </header>
+    <main>
+      <article>
+        <h3>JONNA BO</h3>
+        <img
+          class="Why-authorImage"
+          src="/authors-images/jonna.jpeg"
+          alt="Jonna Bo Lammers"
+        />
+        <p>
+          I am a Dutch illustrator that works frequently with feminist topics
+          such as sexual violence, sexism, and other sex positive topics. This
+          website is part of my masters project at Konstfack in Stockholm,
+          visual communication.
+        </p>
+        <address>
+          <div>
+            <a href="https://www.instagram.com/jonnabolammers/"
+              >@jonnabolammers</a
+            > /
+            <a href="https://www.instagram.com/vaaf.nl/">@vaaf.nl</a>
+          </div>
+          info@jonnabo.nl
+        </address>
+      </article>
+      <article>
+        <h3>ROGIER DE RUIJTER</h3>
+        <img
+          class="Why-authorImage"
+          src="/authors-images/rogier2.jpeg"
+          alt="Jonna Bo Lammers"
+        />
+        <p>
+          Is a Dutch Web Developer based in Amsterdam. Through his work, he
+          tries to make the web and the world a more accessible and inclusive
+          place.
+        </p>
+        <address>
+          <div>
+            <a href="https://www.instagram.com/rogierderuiter/"
+              >@rogierderuiter</a
+            > /
+            <a href="https://www.rogierderuiter.com">rogierderuiter.com</a>
+          </div>
+          rogierderuijter@icloud.com
+        </address>
+      </article>
+    </main>
+  </div>
+  <style>
+    address {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .Why-authorImage {
+      max-width: 300px;
+      display: block;
+    }
+
+    p {
+      margin-block: 1lh;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-block-end: 0.25lh;
+    }
+
+    .Container {
+      max-width: 65ch;
+      margin: 0 auto;
+      margin-trim: block;
+    }
+
+    article + article {
+      margin-block-start: 2rem;
+    }
+  </style>
+</SiteLayout>
