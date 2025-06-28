@@ -4,8 +4,6 @@ import DownloadIcon from "../components/DownloadIcon.astro";
 import DownloadButton from "../components/DownloadButton.astro";
 import { images } from "../consts/images";
 
-console.log(images);
-
 type Image = (typeof images)[number];
 
 const distributeIntoThree = (arr: Image[]) => {
@@ -80,6 +78,7 @@ const columns = distributeIntoThree(images);
       display: flex;
       gap: 0.5rem;
       align-items: center;
+      justify-content: center;
     }
 
     .ButtonContainer .DownloadButton {
@@ -121,11 +120,6 @@ const columns = distributeIntoThree(images);
     }
 
     @media (min-width: 768px) {
-      .ButtonContainer {
-        display: flex;
-        justify-content: center;
-      }
-
       .MediaCard_card .DownloadButton {
         display: flex;
       }
